@@ -38,9 +38,9 @@ export default function Header() {
                 )}
             </nav>
             <button className="w-10 h-8 relative sm:hidden z-10" onClick={() => setNavEnabled(!navEnabled)}>
-                <div className={`transition-all duration-300 w-full h-1 rounded bg-black absolute ${navEnabled ? 'top-1/2 -translate-y-1/2 rotate-45' : 'top-0'}`}></div>
-                <div className={`transition-all duration-300 w-full h-1 rounded bg-black absolute top-1/2 -translate-y-1/2 ${navEnabled ? 'opacity-0' : ''}`}></div>
-                <div className={`transition-all duration-300 w-full h-1 rounded bg-black absolute ${navEnabled ? 'top-1/2 -translate-y-1/2 -rotate-45' : 'top-full -translate-y-full'}`}></div>
+                <div className={`transition-all duration-300 w-full h-1 rounded bg-current absolute ${navEnabled ? 'top-1/2 -translate-y-1/2 rotate-45' : 'top-0'}`}></div>
+                <div className={`transition-all duration-300 w-full h-1 rounded bg-current absolute top-1/2 -translate-y-1/2 ${navEnabled ? 'opacity-0' : ''}`}></div>
+                <div className={`transition-all duration-300 w-full h-1 rounded bg-current absolute ${navEnabled ? 'top-1/2 -translate-y-1/2 -rotate-45' : 'top-full -translate-y-full'}`}></div>
             </button>
         </header>
     );

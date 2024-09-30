@@ -28,9 +28,9 @@ export default function Header() {
     return (
         <header className="mb-4 pb-2 flex items-center justify-between border-b-2 border-border">
             <Link href="/">
-                <Logo className="h-16 w-auto text-[#313131] dark:text-gray-200" textColor="currentColor"/>
+                <Logo className="h-16 w-auto text-[#313131] dark:text-gray-300" textColor="currentColor"/>
             </Link>
-            <nav className={`gap-4 ${kinetika.className} ${navEnabled ? "flex bg-white fixed inset-0 flex-col items-start pt-24 p-[10%] text-3xl" : "hidden sm:flex"}`}>
+            <nav className={`gap-4 ${kinetika.className} ${navEnabled ? "flex bg-background fixed inset-0 flex-col items-start pt-24 p-[10%] text-3xl" : "hidden sm:flex"}`}>
                 {Object.entries(tabs).map(([name, url], index) =>
                     <Link
                         className={`transition-opacity border-b-2 p-2 uppercase ${url === pathName ? "border-accent" : "border-transparent opacity-50 hover:opacity-100"}`}

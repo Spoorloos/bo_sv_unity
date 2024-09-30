@@ -8,6 +8,12 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+            <head>
+                <title>SV Unity</title>
+                <link rel="icon" type="image/svg+xml" href="/logo.svg"/>
+                <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+                <link rel="apple-touch-icon" href="/logo.svg"/>
+            </head>
             <body className="antialiased font-sans bg-background text-black px-8 py-4">
                 <Header/>
                 {children}

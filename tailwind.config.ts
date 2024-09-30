@@ -12,10 +12,6 @@ const config: Config = {
                 background: "var(--background-color)",
                 accent: "var(--accent-color)",
             },
-            fontFamily: {
-                shoika: [ "Shoika", "system-ui", "sans-serif" ],
-                kinetika: [ "Kinetika", "system-ui", "sans-serif" ],
-            }
         },
     },
     plugins: [],

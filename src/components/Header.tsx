@@ -2,22 +2,27 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import localFont from "next/font/local";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const tabs = {
     "Home": "/",
-    "Evenementen": "/evenementen",
-    "Aanmelden": "/aanmelden",
-    "Inloggen": "/inloggen",
+    "Evenementen": "/events",
+    "Aanmelden": "/signup",
+    "Inloggen": "/login",
 } satisfies Record<string, string>;
+
+const kinetika = localFont({
+    src: "../../public/fonts/kinetika-semi-bold.ttf"
+});
 
 export default function Header() {
     const pathName = usePathname();
     const [navEnabled, setNavEnabled] = useState(false);
 
     return (
-        <header className="mx-8 my-4 pb-2 flex items-center justify-between border-b-2 border-gray-300">
+        <header className="mb-4 pb-2 flex items-center justify-between border-b-2 border-gray-300">
             <Link href="/">
                 <Image
                     src="/logo.svg"
@@ -26,7 +31,7 @@ export default function Header() {
                     height="62"
                     priority/>
             </Link>
-            <nav className={`gap-4 font-kinetika ${navEnabled ? 'flex bg-white fixed inset-0 flex-col items-start pt-24 p-[10%] text-3xl' : 'hidden sm:flex'}`}>
+            <nav className={`gap-4 ${kinetika.className} ${navEnabled ? 'flex bg-white fixed inset-0 flex-col items-start pt-24 p-[10%] text-3xl' : 'hidden sm:flex'}`}>
                 {Object.entries(tabs).map(([name, url], index) =>
                     <Link
                         className={`transition-colors border-b-2 p-2 uppercase ${url === pathName ? "border-accent text-black" : "border-transparent text-gray-500 hover:text-black"}`}

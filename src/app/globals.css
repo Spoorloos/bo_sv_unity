@@ -6,14 +6,3 @@
     --background-color: #E3E7EE;
     --accent-color: #488286;
 }
-
-@font-face {
-    font-family: Shoika;
-    src: url("fonts/shoika-regular.ttf");
-}
-
-@font-face {
-    font-family: Kinetika;
-    font-weight: bold;
-    src: url("fonts/kinetika-semi-bold.ttf");
-}

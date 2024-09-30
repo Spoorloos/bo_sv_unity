@@ -8,7 +8,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className="font-sans bg-background text-black antialiased">
+            <body className="antialiased font-sans bg-background text-black px-8 py-4">
                 <Header/>
                 {children}
             </body>

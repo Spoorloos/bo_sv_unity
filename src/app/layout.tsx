@@ -17,7 +17,7 @@ export default function RootLayout({
                 <meta property="og:title" content="SV Unity"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://sv-unity.spoorloos.xyz"/>
-                <meta property="og:description" content="The eerste studenten vereniging van Nederland!"/>
+                <meta property="og:description" content="De eerste studenten vereniging van Nederland!"/>
                 <meta name="theme-color" content="#488286"/>
                 <link rel="icon" type="image/svg+xml" href="/logo.svg"/>
                 <link rel="icon" type="image/x-icon" href="/favicon.ico"/>

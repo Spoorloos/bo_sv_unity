@@ -1,5 +1,6 @@
 "use client";
 
+import logo from "@/public/logo.svg";
 import Link from "next/link";
 import Image from "next/image";
 import localFont from "next/font/local";
@@ -24,12 +25,7 @@ export default function Header() {
     return (
         <header className="mb-4 pb-2 flex items-center justify-between border-b-2 border-gray-300">
             <Link href="/">
-                <Image
-                    src="/logo.svg"
-                    alt="logo"
-                    width="67"
-                    height="62"
-                    priority/>
+                <Image className="h-16 w-auto" src={logo} alt="logo" priority/>
             </Link>
             <nav className={`gap-4 ${kinetika.className} ${navEnabled ? 'flex bg-white fixed inset-0 flex-col items-start pt-24 p-[10%] text-3xl' : 'hidden sm:flex'}`}>
                 {Object.entries(tabs).map(([name, url], index) =>

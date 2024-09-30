@@ -24,7 +24,7 @@ export default function Header() {
 
     useEffect(() => {
         document.body.classList.toggle("overflow-hidden", navEnabled);
-    }, [ navEnabled ]);
+    }, [navEnabled]);
 
     return (
         <header className="mb-4 pb-2 flex items-center justify-between border-b-2 border-gray-300">

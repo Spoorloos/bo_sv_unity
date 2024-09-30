@@ -1,8 +1,7 @@
 "use client";
 
-import logo from "@/public/logo.svg";
+import Logo from "@/components/Logo";
 import Link from "next/link";
-import Image from "next/image";
 import localFont from "next/font/local";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -27,14 +26,14 @@ export default function Header() {
     }, [navEnabled]);
 
     return (
-        <header className="mb-4 pb-2 flex items-center justify-between border-b-2 border-gray-300">
+        <header className="mb-4 pb-2 flex items-center justify-between border-b-2 border-border">
             <Link href="/">
-                <Image className="h-16 w-auto" src={logo} alt="logo" priority/>
+                <Logo className="h-16 w-auto text-[#313131] dark:text-gray-200" textColor="currentColor"/>
             </Link>
             <nav className={`gap-4 ${kinetika.className} ${navEnabled ? "flex bg-white fixed inset-0 flex-col items-start pt-24 p-[10%] text-3xl" : "hidden sm:flex"}`}>
                 {Object.entries(tabs).map(([name, url], index) =>
                     <Link
-                        className={`transition-colors border-b-2 p-2 uppercase ${url === pathName ? "border-accent text-black" : "border-transparent text-gray-500 hover:text-black"}`}
+                        className={`transition-opacity border-b-2 p-2 uppercase ${url === pathName ? "border-accent" : "border-transparent opacity-50 hover:opacity-100"}`}
                         href={url}
                         key={index}
                         onClick={() => setNavEnabled(false)}

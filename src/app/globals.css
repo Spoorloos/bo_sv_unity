@@ -3,6 +3,16 @@
 @tailwind utilities;
 
 :root {
-    --background-color: #E3E7EE;
     --accent-color: #488286;
+    --background-color: #E3E7EE;
+    --text-color: #000000;
+    --border-color: #CACFD8;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #1B2225;
+        --text-color: #FFFFFF;
+        --border-color: #343B3E;
+    }
 }

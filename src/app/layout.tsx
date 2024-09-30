@@ -22,7 +22,7 @@ export default function RootLayout({
                 <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
                 <link rel="apple-touch-icon" href="/logo.png"/>
             </head>
-            <body className="antialiased font-sans bg-background text-black px-8 py-4">
+            <body className="antialiased font-sans bg-background text-text px-8 py-4">
                 <Header/>
                 {children}
                 <Footer/>

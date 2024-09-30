@@ -36,7 +36,7 @@ export default function Header() {
                     >{name}</Link>
                 )}
             </nav>
-            <button className="w-12 h-10 relative sm:hidden" onClick={() => setNavEnabled(!navEnabled)}>
+            <button className="w-12 h-10 relative sm:hidden z-10" onClick={() => setNavEnabled(!navEnabled)}>
                 <div className={`transition-all duration-300 w-full h-1 rounded bg-black absolute ${navEnabled ? 'top-1/2 -translate-y-1/2 rotate-45' : 'top-0'}`}></div>
                 <div className={`transition-all duration-300 w-full h-1 rounded bg-black absolute top-1/2 -translate-y-1/2 ${navEnabled ? 'opacity-0' : ''}`}></div>
                 <div className={`transition-all duration-300 w-full h-1 rounded bg-black absolute ${navEnabled ? 'top-1/2 -translate-y-1/2 -rotate-45' : 'top-full -translate-y-full'}`}></div>

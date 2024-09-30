@@ -3,25 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background-color: #E3E7EE;
+    --accent-color: #488286;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+    font-family: Shoika;
+    src: url("fonts/shoika-regular.ttf");
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+@font-face {
+    font-family: Kinetika;
+    font-weight: bold;
+    src: url("fonts/kinetika-semi-bold.ttf");
 }

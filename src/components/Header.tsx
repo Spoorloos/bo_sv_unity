@@ -30,7 +30,7 @@ export default function Header() {
             <Link href="/">
                 <Logo className="h-16 w-auto text-[#313131] dark:text-gray-300" textColor="currentColor"/>
             </Link>
-            <nav className={`gap-4 ${kinetika.className} ${navEnabled ? "flex bg-background fixed inset-0 flex-col items-start pt-24 p-[10%] text-3xl" : "hidden sm:flex"}`}>
+            <nav className={`transition-transform origin-top fixed inset-0 bg-background flex flex-col items-start gap-4 p-[10%] pt-24 text-3xl ${kinetika.className} ${navEnabled ? "scale-y-100" : "scale-y-0"}`}>
                 {Object.entries(tabs).map(([name, url], index) =>
                     <Link
                         className={`transition-opacity border-b-2 p-2 uppercase ${url === pathName ? "border-accent" : "border-transparent opacity-50 hover:opacity-100"}`}

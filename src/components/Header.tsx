@@ -1,7 +1,8 @@
 "use client";
 
-import Logo from "@/components/Logo";
+import logo from "@/public/logo/logo.svg";
 import Link from "next/link";
+import Image from "next/image";
 import localFont from "next/font/local";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -32,7 +33,7 @@ export default function Header() {
     return (
         <header className="mx-8 mt-4 pb-2 flex items-center justify-between border-b-2 border-border">
             <Link href="/">
-                <Logo className="h-16 w-auto text-[#313131] dark:text-gray-300" textColor="currentColor"/>
+                <Image className="h-16 w-auto" src={logo} alt="logo"/>
             </Link>
             <nav className={`origin-top fixed sm:static inset-0 bg-background flex flex-col sm:flex-row items-start gap-4 p-[10%] pt-24 sm:p-0 text-3xl sm:text-base sm:transform-none ${kinetika.className} ${animate ? "transition-transform duration-300" : ""} ${navEnabled ? "scale-y-100" : "scale-y-0"}`}>
                 {Object.entries(tabs).map(([name, url], index) =>

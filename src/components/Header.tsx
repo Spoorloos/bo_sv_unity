@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import localFont from "next/font/local";
 import { usePathname } from "next/navigation";
-import { Dispatch, SetStateAction, useState } from "react";
+import { useState, Dispatch, SetStateAction } from "react";
 
 const tabs = {
     "Home": "/",
@@ -18,16 +18,16 @@ const kinetika = localFont({
     src: "../../public/fonts/kinetika-semi-bold.ttf"
 });
 
-type Header = {
+type Header = Readonly<{
     setFreeze: Dispatch<SetStateAction<boolean>>;
-}
+}>;
 
 export default function Header({ setFreeze }: Header) {
     const pathName = usePathname();
     const [navEnabled, setNavEnabled] = useState(false);
     const [animate, setAnimate] = useState(false);
 
-    function toggleNavBar(state = !navEnabled) {
+    const toggleNavBar = (state = !navEnabled) => {
         setNavEnabled(state);
         setAnimate(true);
         setTimeout(() => setAnimate(false), 300);

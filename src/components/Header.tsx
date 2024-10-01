@@ -28,12 +28,13 @@ export default function Header() {
         setAnimate(true);
         setTimeout(() => setAnimate(false), 300);
         document.body.classList.toggle("overflow-hidden", state);
+        document.documentElement.scrollTop = 0;
     }
 
     return (
         <header className="mx-8 mt-4 pb-2 flex items-center justify-between border-b-2 border-border">
             <Link href="/">
-                <Image className="h-16 w-auto" src={logo} alt="logo"/>
+                <Image className="h-16 w-auto" src={logo} alt="S.V. Unity Logo"/>
             </Link>
             <nav className={`origin-top fixed sm:static inset-0 bg-background flex flex-col sm:flex-row gap-4 p-[10%] pt-24 sm:p-0 text-3xl sm:text-base ${kinetika.className} ${animate ? "transition-all duration-300" : ""} ${navEnabled ? "scale-y-100 opacity-100" : "scale-y-0 sm:transform-none opacity-0 sm:opacity-100"}`}>
                 {Object.entries(tabs).map(([name, url], index) =>

@@ -22,15 +22,15 @@ export default function Header() {
     const [navEnabled, setNavEnabled] = useState(false);
     const [animate, setAnimate] = useState(false);
 
-    function toggleNavBar() {
-        setNavEnabled(!navEnabled);
+    function toggleNavBar(state = !navEnabled) {
+        setNavEnabled(state);
         setAnimate(true);
         setTimeout(() => setAnimate(false), 300);
-        document.body.classList.toggle("overflow-hidden", navEnabled);
+        document.body.classList.toggle("overflow-hidden", state);
     }
 
     return (
-        <header className="mb-4 pb-2 flex items-center justify-between border-b-2 border-border">
+        <header className="mx-8 mt-4 pb-2 flex items-center justify-between border-b-2 border-border">
             <Link href="/">
                 <Logo className="h-16 w-auto text-[#313131] dark:text-gray-300" textColor="currentColor"/>
             </Link>
@@ -40,11 +40,11 @@ export default function Header() {
                         className={`transition-opacity border-b-2 p-2 uppercase ${url === pathName ? "border-accent" : "border-transparent opacity-50 hover:opacity-100"}`}
                         href={url}
                         key={index}
-                        onClick={toggleNavBar}
+                        onClick={() => toggleNavBar(false)}
                     >{name}</Link>
                 )}
             </nav>
-            <button className="w-10 h-8 relative sm:hidden z-10" onClick={toggleNavBar}>
+            <button className="w-10 h-8 relative sm:hidden z-10" onClick={() => toggleNavBar()}>
                 <div className={`transition-all duration-300 w-full h-1 rounded bg-current absolute ${navEnabled ? "top-1/2 -translate-y-1/2 rotate-45" : "top-0"}`}></div>
                 <div className={`transition-all duration-300 w-full h-1 rounded bg-current absolute top-1/2 -translate-y-1/2 ${navEnabled ? "opacity-0" : ""}`}></div>
                 <div className={`transition-all duration-300 w-full h-1 rounded bg-current absolute ${navEnabled ? "top-1/2 -translate-y-1/2 -rotate-45" : "top-full -translate-y-full"}`}></div>

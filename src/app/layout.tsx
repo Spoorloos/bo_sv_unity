@@ -22,9 +22,13 @@ export default function RootLayout({
                 <link rel="icon" type="image/svg+xml" href="/logo/logo.svg"/>
                 <link rel="apple-touch-icon" href="/logo/logo.png"/>
             </head>
-            <body className="antialiased font-sans bg-background text-text px-8 py-4">
-                <Header/>
-                {children}
+            <body className="antialiased font-sans bg-background text-text">
+                <div className="min-h-screen flex flex-col">
+                    <Header/>
+                    <main className="px-8 py-4 flex-1">
+                        {children}
+                    </main>
+                </div>
                 <Footer/>
             </body>
         </html>

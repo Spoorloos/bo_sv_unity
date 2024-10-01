@@ -37,7 +37,7 @@ export default function Header() {
             <nav className={`origin-top fixed sm:static inset-0 bg-background flex flex-col sm:flex-row items-start gap-4 p-[10%] pt-24 sm:p-0 text-3xl sm:text-base sm:transform-none ${kinetika.className} ${animate ? "transition-transform duration-300" : ""} ${navEnabled ? "scale-y-100" : "scale-y-0"}`}>
                 {Object.entries(tabs).map(([name, url], index) =>
                     <Link
-                        className={`transition-opacity border-b-2 p-2 uppercase ${url === pathName ? "border-accent" : "border-transparent opacity-50 hover:opacity-100"}`}
+                        className={`transition-opacity border-b-2 p-2 uppercase ${url === pathName ? "border-accent" : "border-transparent opacity-50 hocus:opacity-100"}`}
                         href={url}
                         key={index}
                         onClick={() => toggleNavBar(false)}

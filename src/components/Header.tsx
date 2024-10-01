@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import localFont from "next/font/local";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 
 const tabs = {
     "Home": "/",
@@ -18,7 +18,11 @@ const kinetika = localFont({
     src: "../../public/fonts/kinetika-semi-bold.ttf"
 });
 
-export default function Header() {
+type Header = {
+    setFreeze: Dispatch<SetStateAction<boolean>>;
+}
+
+export default function Header({ setFreeze }: Header) {
     const pathName = usePathname();
     const [navEnabled, setNavEnabled] = useState(false);
     const [animate, setAnimate] = useState(false);
@@ -27,8 +31,7 @@ export default function Header() {
         setNavEnabled(state);
         setAnimate(true);
         setTimeout(() => setAnimate(false), 300);
-        document.body.classList.toggle("overflow-hidden", state);
-        document.documentElement.scrollTop = 0;
+        setFreeze(state);
     }
 
     return (

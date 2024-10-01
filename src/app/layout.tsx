@@ -8,7 +8,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="nl">
             <head>
                 <title>SV Unity</title>
                 <meta name="author" content="Mick Negenman"/>
@@ -18,9 +18,9 @@ export default function RootLayout({
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://sv-unity.spoorloos.xyz"/>
                 <meta property="og:description" content="De eerste studenten vereniging van Nederland!"/>
-                <link rel="icon" type="image/x-icon" href="/logo/logo.ico"/>
-                <link rel="icon" type="image/svg+xml" href="/logo/logo.svg"/>
-                <link rel="apple-touch-icon" href="/logo/logo.png"/>
+                <link rel="icon" type="image/x-icon" sizes="32x32" href="/logo/logo.ico"/>
+                <link rel="icon" type="image/svg+xml" sizes="any" href="/logo/logo.svg"/>
+                <link rel="apple-touch-icon" sizes="180x180" href="/logo/logo.png"/>
             </head>
             <body className="antialiased font-sans bg-background text-text">
                 <div className="min-h-screen flex flex-col">

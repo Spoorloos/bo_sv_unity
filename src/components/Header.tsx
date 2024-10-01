@@ -35,7 +35,7 @@ export default function Header() {
             <Link href="/">
                 <Image className="h-16 w-auto" src={logo} alt="logo"/>
             </Link>
-            <nav className={`origin-top fixed sm:static inset-0 bg-background flex flex-col sm:flex-row text-3xl gap-4 p-[10%] pt-24 sm:p-0 sm:text-base sm:transform-none ${kinetika.className} ${animate ? "transition-transform duration-300" : ""} ${navEnabled ? "scale-y-100" : "scale-y-0"}`}>
+            <nav className={`origin-top fixed sm:static inset-0 bg-background flex flex-col sm:flex-row gap-4 p-[10%] pt-24 sm:p-0 text-3xl sm:text-base ${kinetika.className} ${animate ? "transition-all duration-300" : ""} ${navEnabled ? "scale-y-100 opacity-100" : "scale-y-0 sm:transform-none opacity-0 sm:opacity-100"}`}>
                 {Object.entries(tabs).map(([name, url], index) =>
                     <Link
                         className={`transition-opacity uppercase ${url !== pathName ? "opacity-50 hocus:opacity-100" : ""}`}

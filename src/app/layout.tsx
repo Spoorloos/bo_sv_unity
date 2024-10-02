@@ -23,9 +23,7 @@ export default function RootLayout({ children }: RootLayout) {
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://sv-unity.spoorloos.xyz"/>
                 <meta property="og:description" content="De eerste studenten vereniging van Nederland!"/>
-                <link rel="icon" href="/logo/logo.ico" sizes="32x32"/>
-                <link rel="icon" href="/logo/logo.svg" type="image/svg+xml" sizes="all"/>
-                <link rel="apple-touch-icon" href="/logo/logo.png" sizes="180x180"/>
+                <link rel="icon" href="/logo.svg" type="image/svg+xml" sizes="all"/>
             </head>
             <body className="antialiased font-sans bg-background text-text">
                 <div className="min-h-screen flex flex-col">

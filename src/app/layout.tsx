@@ -1,6 +1,6 @@
 "use client";
 
-import "./globals.css";
+import "@/app/styles.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useState } from "react";
@@ -23,7 +23,6 @@ export default function RootLayout({ children }: RootLayout) {
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://sv-unity.spoorloos.xyz"/>
                 <meta property="og:description" content="De eerste studenten vereniging van Nederland!"/>
-                <link rel="icon" href="/logo.svg" type="image/svg+xml" sizes="all"/>
             </head>
             <body className="antialiased font-sans bg-background text-text">
                 <div className="min-h-screen flex flex-col">

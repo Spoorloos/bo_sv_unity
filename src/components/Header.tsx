@@ -4,7 +4,7 @@ import Logo from "@/components/Logo";
 import Link from "next/link";
 import localFont from "next/font/local";
 import { usePathname } from "next/navigation";
-import { useRef, useState, useCallback, MutableRefObject } from "react";
+import { useRef, useState, useCallback, MutableRefObject, useEffect } from "react";
 
 const tabs = {
     "Home": "/",
@@ -26,12 +26,12 @@ export default function Header({ freeze }: Header) {
     const navEnabled = useRef(false);
     const [animate, setAnimate] = useState(false);
 
-    const toggleNavBar = useCallback((state = !navEnabled.current) => {
+    const toggleNavBar = (state = !navEnabled.current) => {
         navEnabled.current = state;
         freeze.current = state;
         setAnimate(true);
         setTimeout(() => setAnimate(false), 300);
-    }, [navEnabled.current]);
+    }
 
     return (
         <header className="mx-8 mt-4 pb-2 flex items-center justify-between border-b-2 border-border">

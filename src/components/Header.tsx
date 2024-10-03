@@ -44,7 +44,7 @@ export default function Header({ setFreeze }: Header) {
                         className={`transition-opacity uppercase ${url !== pathName ? "opacity-50 hocus:opacity-100" : ""}`}
                         href={url}
                         key={index}
-                        onClick={() => toggleNavBar(false)}
+                        onClick={() => navEnabled && toggleNavBar(false)}
                     >
                         <span className={`transition-colors p-2 inline-block border-b-2 ${url === pathName ? "border-accent" : "border-transparent"}`}>{name}</span>
                     </Link>

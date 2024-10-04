@@ -13,7 +13,7 @@ const config: Config = {
                 accent: "var(--accent-color)",
                 background: "var(--background-color)",
                 text: "var(--text-color)",
-                border: "var(--border-color)"
+                border: "var(--border-color)",
             },
         },
     },

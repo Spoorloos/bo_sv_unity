@@ -23,23 +23,24 @@ export default function Header() {
     const [animate, setAnimate] = useState(false);
 
     const toggleNavBar = (state?: boolean) => {
-        setNavEnabled(prev => state ?? !prev);
         setAnimate(true);
+        setNavEnabled(prev => state ?? !prev);
         setTimeout(() => setAnimate(false), 300);
     }
 
     return (
-        <header className="mx-8 mt-4 pb-2 flex items-center justify-between border-b-2 border-border">
+        <header className="mx-8 py-3 flex items-center justify-between border-b-2 border-border">
             <Link href="/">
                 <Logo className="h-16 w-auto text-[#313131] dark:text-[#D1D5DB]"/>
             </Link>
             <nav className={`origin-top fixed sm:static inset-0 bg-background flex flex-col sm:flex-row gap-4 p-[10%] pt-24 sm:p-0 text-3xl sm:text-base ${kinetika.className} ${animate ? "transition-all duration-300" : ""} ${navEnabled ? "scale-y-100 opacity-100 open" : "scale-y-0 sm:transform-none opacity-0 sm:opacity-100"}`}>
                 {Object.entries(tabs).map(([name, url], index) =>
                     <Link
-                        className={`transition-opacity uppercase ${url !== pathName ? "opacity-50 hocus:opacity-100" : ""}`}
+                        className={`transition-opacity uppercase sm:grow-anim ${url !== pathName ? "opacity-50 hocus:opacity-100" : ""}`}
+                        style={{ animationDelay: index * 0.1 + "s" }}
                         href={url}
                         key={index}
-                        onClick={() => navEnabled && toggleNavBar(false)}
+                        onClick={() => void (navEnabled && toggleNavBar(false))}
                     >
                         <span className={`transition-colors p-2 inline-block border-b-2 ${url === pathName ? "border-accent" : "border-transparent"}`}>{name}</span>
                     </Link>

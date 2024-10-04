@@ -4,5 +4,5 @@ export default function NotFound() {
             <span className="text-3xl pe-4 border-e border-border">404</span>
             <span className="text-xl font-thin">This page could not be found</span>
         </div>
-    )
+    );
 }

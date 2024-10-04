@@ -14,6 +14,7 @@ const config: Config = {
                 background: "var(--background-color)",
                 text: "var(--text-color)",
                 border: "var(--border-color)",
+                footer: "var(--footer-color)",
             },
         },
     },

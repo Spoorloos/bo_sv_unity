@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
-        <footer>
-            <h2>Awesome footer</h2>
+        <footer className="p-8 pt-32 bg-gradient-to-b from-background to-50% to-footer">
+
         </footer>
     );
 }

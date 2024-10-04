@@ -21,7 +21,12 @@ export default function RootLayout({ children }: RootLayout) {
             </head>
             <body className="antialiased font-sans bg-background text-text">
                 <div className="min-h-screen flex flex-col">
-                    <Header/>
+                    <Header tabs={{
+                        "Home": "/",
+                        "Evenementen": "/events",
+                        "Aanmelden": "/signup",
+                        "Inloggen": "/login",
+                    }}/>
                     <main className="px-8 py-4 flex-1">
                         {children}
                     </main>

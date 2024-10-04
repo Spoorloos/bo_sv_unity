@@ -1,19 +1,14 @@
-"use client";
-
 import "@/app/styles.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { useRef } from "react";
 
 type RootLayout = Readonly<{
     children: React.ReactNode;
 }>;
 
 export default function RootLayout({ children }: RootLayout) {
-    const freeze = useRef(false);
-
     return (
-        <html className={freeze ? "overflow-hidden" : ""} lang="nl">
+        <html lang="nl">
             <head>
                 <title>Studenten Vereniging Unity</title>
                 <meta name="author" content="Mick Negenman"/>
@@ -26,7 +21,7 @@ export default function RootLayout({ children }: RootLayout) {
             </head>
             <body className="antialiased font-sans bg-background text-text">
                 <div className="min-h-screen flex flex-col">
-                    <Header freeze={freeze}/>
+                    <Header/>
                     <main className="px-8 py-4 flex-1">
                         {children}
                     </main>

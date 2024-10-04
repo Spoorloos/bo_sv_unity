@@ -16,3 +16,7 @@
         --border-color: #343B3E;
     }
 }
+
+html:has(nav.open) {
+    overflow: hidden;
+}

@@ -4,7 +4,7 @@ import Logo from "@/components/Logo";
 import Link from "next/link";
 import localFont from "next/font/local";
 import { usePathname } from "next/navigation";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 const tabs = {
     "Home": "/",
@@ -19,11 +19,11 @@ const kinetika = localFont({
 
 export default function Header() {
     const pathName = usePathname();
-    const navEnabled = useRef(false);
+    const [navEnabled, setNavEnabled] = useState(false);
     const [animate, setAnimate] = useState(false);
 
-    const toggleNavBar = (state = !navEnabled.current) => {
-        navEnabled.current = state;
+    const toggleNavBar = (state?: boolean) => {
+        setNavEnabled(prev => state ?? !prev);
         setAnimate(true);
         setTimeout(() => setAnimate(false), 300);
     }
@@ -33,22 +33,22 @@ export default function Header() {
             <Link href="/">
                 <Logo className="h-16 w-auto text-[#313131] dark:text-[#D1D5DB]"/>
             </Link>
-            <nav className={`origin-top fixed sm:static inset-0 bg-background flex flex-col sm:flex-row gap-4 p-[10%] pt-24 sm:p-0 text-3xl sm:text-base ${kinetika.className} ${animate ? "transition-all duration-300" : ""} ${navEnabled.current ? "scale-y-100 opacity-100 open" : "scale-y-0 sm:transform-none opacity-0 sm:opacity-100"}`}>
+            <nav className={`origin-top fixed sm:static inset-0 bg-background flex flex-col sm:flex-row gap-4 p-[10%] pt-24 sm:p-0 text-3xl sm:text-base ${kinetika.className} ${animate ? "transition-all duration-300" : ""} ${navEnabled ? "scale-y-100 opacity-100 open" : "scale-y-0 sm:transform-none opacity-0 sm:opacity-100"}`}>
                 {Object.entries(tabs).map(([name, url], index) =>
                     <Link
                         className={`transition-opacity uppercase ${url !== pathName ? "opacity-50 hocus:opacity-100" : ""}`}
                         href={url}
                         key={index}
-                        onClick={() => navEnabled.current && toggleNavBar(false)}
+                        onClick={() => navEnabled && toggleNavBar(false)}
                     >
                         <span className={`transition-colors p-2 inline-block border-b-2 ${url === pathName ? "border-accent" : "border-transparent"}`}>{name}</span>
                     </Link>
                 )}
             </nav>
             <button className="w-10 h-8 relative sm:hidden z-10" onClick={() => toggleNavBar()}>
-                <div className={`transition-all duration-300 w-full h-1 rounded bg-current absolute ${navEnabled.current ? "top-1/2 -translate-y-1/2 rotate-45" : "top-0"}`}></div>
-                <div className={`transition-all duration-300 w-full h-1 rounded bg-current absolute top-1/2 -translate-y-1/2 ${navEnabled.current ? "opacity-0" : ""}`}></div>
-                <div className={`transition-all duration-300 w-full h-1 rounded bg-current absolute ${navEnabled.current ? "top-1/2 -translate-y-1/2 -rotate-45" : "top-full -translate-y-full"}`}></div>
+                <div className={`transition-all duration-300 w-full h-1 rounded bg-current absolute ${navEnabled ? "top-1/2 -translate-y-1/2 rotate-45" : "top-0"}`}></div>
+                <div className={`transition-all duration-300 w-full h-1 rounded bg-current absolute top-1/2 -translate-y-1/2 ${navEnabled ? "opacity-0" : ""}`}></div>
+                <div className={`transition-all duration-300 w-full h-1 rounded bg-current absolute ${navEnabled ? "top-1/2 -translate-y-1/2 -rotate-45" : "top-full -translate-y-full"}`}></div>
             </button>
         </header>
     );

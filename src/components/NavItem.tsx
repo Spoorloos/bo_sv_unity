@@ -6,11 +6,11 @@ const kinetika = localFont({
 });
 
 type NavItem = Readonly<{
-    name: string,
-    href: string,
-    selected?: boolean,
-    onClick?: () => void,
-    style?: Record<string, string>,
+    name: string;
+    href: string;
+    selected?: boolean;
+    onClick?: () => void;
+    style?: Record<string, string>;
 }>;
 
 export default function NavItem({ name, href, selected, onClick, style }: NavItem) {

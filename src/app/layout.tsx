@@ -1,6 +1,20 @@
 import "@/app/styles.css";
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+    title: "Studenten Vereniging Unity",
+    authors: [{ name: "Mick Negenman" }],
+    keywords: "MBO, Student, Studenten, Studenten Vereniging, SVUnity, Unity",
+    description: "De eerste MBO studenten vereniging van Nederland",
+    openGraph: {
+        title: "SV Unity",
+        type: "website",
+        url: "https://sv-unity.spoorloos.xyz",
+        description: "De eerste studenten vereniging van Nederland!"
+    },
+}
 
 type RootLayout = Readonly<{
     children: React.ReactNode;
@@ -9,16 +23,6 @@ type RootLayout = Readonly<{
 export default function RootLayout({ children }: RootLayout) {
     return (
         <html lang="nl">
-            <head>
-                <title>Studenten Vereniging Unity</title>
-                <meta name="author" content="Mick Negenman"/>
-                <meta name="keywords" content="MBO, Student, Studenten, Studenten Vereniging, SVUnity, Unity"/>
-                <meta name="description" content="De eerste MBO studenten vereniging van Nederland"/>
-                <meta property="og:title" content="SV Unity"/>
-                <meta property="og:type" content="website"/>
-                <meta property="og:url" content="https://sv-unity.spoorloos.xyz"/>
-                <meta property="og:description" content="De eerste studenten vereniging van Nederland!"/>
-            </head>
             <body className="antialiased font-sans bg-background text-text">
                 <div className="min-h-screen flex flex-col">
                     <Header tabs={{

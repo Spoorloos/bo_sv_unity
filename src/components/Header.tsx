@@ -28,12 +28,11 @@ export default function Header({ tabs }: Header) {
             <nav className={`origin-top fixed sm:static inset-0 bg-background flex flex-col sm:flex-row gap-4 p-[10%] pt-24 sm:p-0 ${animate ? "transition-all duration-300" : ""} ${navEnabled ? "scale-y-100 opacity-100 open" : "scale-y-0 sm:transform-none opacity-0 sm:opacity-100 invisible sm:visible"}`}>
                 {Object.entries(tabs).map(([name, url], index) =>
                     <NavItem
+                        key={index}
                         name={name}
                         href={url}
-                        key={index}
                         selected={url === pathName}
-                        onClick={() => void (navEnabled && toggleNavBar(false))}
-                        style={{ animationDelay: index * 0.1 + "s" }}/>
+                        onClick={() => void (navEnabled && toggleNavBar(false))}/>
                 )}
             </nav>
             <Hamburger toggled={navEnabled} onToggle={() => toggleNavBar()}/>

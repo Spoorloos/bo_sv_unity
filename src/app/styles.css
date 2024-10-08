@@ -22,18 +22,3 @@
         overflow: hidden;
     }
 }
-
-@layer components {
-    .grow-anim {
-        animation: grow 0.5s both;
-    }
-}
-
-@keyframes grow {
-    from {
-        transform: scaleY(0);
-    }
-    to {
-        transform: scaleY(1);
-    }
-}

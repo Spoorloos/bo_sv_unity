@@ -1,9 +1,4 @@
 import Link from "next/link";
-import localFont from "next/font/local";
-
-const kinetika = localFont({
-    src: "../../public/fonts/kinetika-semi-bold.ttf"
-});
 
 type NavItem = Readonly<{
     name: string;
@@ -21,7 +16,7 @@ export default function NavItem({ name, href, selected, onClick, style }: NavIte
             href={href}
             onClick={onClick}
         >
-            <span className={`transition-colors p-2 inline-block border-b-2 text-3xl sm:text-base ${kinetika.className} ${selected ? "border-accent" : "border-transparent"}`}>{name}</span>
+            <span className={`transition-colors p-2 inline-block border-b-2 text-3xl sm:text-base font-kinetika ${selected ? "border-accent" : "border-transparent"}`}>{name}</span>
         </Link>
     )
 }

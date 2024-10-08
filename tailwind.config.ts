@@ -15,6 +15,9 @@ const config: Config = {
                 text: "var(--text-color)",
                 border: "var(--border-color)",
             },
+            fontFamily: {
+                kinetika: ["var(--font-kinetika)"],
+            },
         },
     },
     plugins: [

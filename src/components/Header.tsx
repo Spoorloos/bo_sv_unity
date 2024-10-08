@@ -1,11 +1,11 @@
 "use client";
 
+import { useState } from "react";
+import { usePathname } from "next/navigation";
+
 import Logo from "@/components/Logo";
 import Hamburger from "@/components/Hamburger";
 import NavItem from "@/components/NavItem";
-
-import { usePathname } from "next/navigation";
-import { useState } from "react";
 
 type Header = Readonly<{
     tabs: Record<string, string>;

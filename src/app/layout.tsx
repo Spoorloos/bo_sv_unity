@@ -1,5 +1,7 @@
 import "@/app/styles.css";
-import type { Metadata } from "next";
+import { type Metadata } from "next";
+import localFont from "next/font/local";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -16,13 +18,18 @@ export const metadata: Metadata = {
     },
 }
 
+const kinetika = localFont({
+    src: "../../public/fonts/kinetika-semi-bold.ttf",
+    variable: "--font-kinetika"
+});
+
 type RootLayout = Readonly<{
     children: React.ReactNode;
 }>;
 
 export default function RootLayout({ children }: RootLayout) {
     return (
-        <html lang="nl">
+        <html lang="nl" className={kinetika.variable}>
             <body className="antialiased font-sans bg-background text-text">
                 <div className="min-h-screen flex flex-col">
                     <Header tabs={{

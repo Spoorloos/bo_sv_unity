@@ -35,7 +35,7 @@ export default function RootLayout({ children }: RootLayout) {
                     <Header tabs={{
                         "Home": "/",
                         "Evenementen": "/events",
-                        "Aanmelden": "/signup",
+                        "Inschrijven": "/enrol",
                         "Inloggen": "/login",
                     }}/>
                     <main className="px-8 py-4 flex-1">

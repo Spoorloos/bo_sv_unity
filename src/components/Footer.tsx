@@ -3,6 +3,7 @@ import Youtube from "@/public/youtube.svg";
 import Facebook from "@/public/facebook.svg";
 import Instagram from "@/public/instagram.svg";
 import Twitter from "@/public/twitter.svg";
+import Telegram from "@/public/telegram.svg";
 
 export default function Footer() {
     return (
@@ -44,6 +45,7 @@ export default function Footer() {
                             <Link className="accent-hover" href="#"><Youtube/></Link>
                             <Link className="accent-hover" href="#"><Facebook/></Link>
                             <Link className="accent-hover" href="#"><Twitter/></Link>
+                            <Link className="accent-hover" href="#"><Telegram/></Link>
                         </div>
                     </section>
                 </div>

@@ -31,14 +31,14 @@ export default function Footer() {
                 </ul>
                 <div className="flex flex-col justify-between text-start sm:text-end lg:text-start gap-8 sm:gap-0">
                     <section className="flex flex-col justify-between gap-2">
-                        <h2 className="footer-column">Newsletter</h2>
+                        <h2 className="footer-column">Nieuwsbrief</h2>
                         <form className="flex" action="https://youtube.com">
-                            <input className="w-full p-2 border border-border bg-transparent outline-none" type="email" name="email" placeholder="Email address" required/>
+                            <input className="w-full p-2 border border-border bg-transparent outline-none" type="email" name="email" placeholder="E-mailadres" required/>
                             <button className="p-2 transition-colors text-background bg-gray-800 dark:bg-gray-400 hover:bg-accent font-kinetika uppercase" type="submit">Sub</button>
                         </form>
                     </section>
                     <section className="flex flex-col justify-between gap-2">
-                        <h2 className="footer-column">Connect With Us</h2>
+                        <h2 className="footer-column">Socials</h2>
                         <div className="h-7 flex gap-3 *:h-full *:*:h-full justify-start sm:justify-end lg:justify-start">
                             <Link href="#"><Instagram className="accent-hover"/></Link>
                             <Link href="#"><Youtube className="accent-hover"/></Link>
@@ -48,7 +48,7 @@ export default function Footer() {
                     </section>
                 </div>
             </div>
-            <p className="text-center text-gray-500">Copyright &copy; 2024, SV-Unity</p>
+            <p className="text-center text-gray-500">S.V. Unity &copy; 2024</p>
         </footer>
     );
 }

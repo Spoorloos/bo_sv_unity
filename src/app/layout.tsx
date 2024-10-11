@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     keywords: "MBO, Student, Studenten, Studenten Vereniging, SVUnity, Unity",
     description: "De eerste MBO studenten vereniging van Nederland",
     openGraph: {
-        title: "SV Unity",
+        title: "S.V. Unity",
         type: "website",
         url: "https://sv-unity.spoorloos.xyz",
         description: "De eerste studenten vereniging van Nederland!"

@@ -18,6 +18,7 @@
         }
     }
 
+    /* Disable scrolling when the nav is open */
     html:has(nav.open) {
         overflow: hidden;
     }

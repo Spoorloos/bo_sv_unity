@@ -1,7 +1,7 @@
 /** @type {import("next").NextConfig} */
 export default {
-    // output: "export",
-    // basePath: "/bo/m5svunity",
+    output: "export",
+    basePath: process.env.NODE_ENV === "production" ? "/bo/m5svunity" : "",
     webpack(config) {
         const fileLoaderRule = config.module.rules.find(
             (rule) => rule.test?.test?.(".svg")

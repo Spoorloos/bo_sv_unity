@@ -16,13 +16,13 @@ export default {
                 border: "var(--border-color)",
             },
             fontFamily: {
-                kinetika: ["var(--font-kinetika)"],
+                kinetika: ["var(--font-kinetika)", "system-ui", "sans-serif"],
             },
         },
     },
     plugins: [
         plugin(({ addVariant }) => {
-            addVariant("hocus", ["&:hover", "&:focus"])
+            addVariant("hocus", ["&:hover", "&:focus"]);
         }),
     ],
 }

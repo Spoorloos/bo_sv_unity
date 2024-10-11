@@ -1,6 +1,4 @@
 import Link from "next/link";
-import Logo from "@/components/Logo";
-
 import Youtube from "@/public/youtube.svg";
 import Facebook from "@/public/facebook.svg";
 import Instagram from "@/public/instagram.svg";

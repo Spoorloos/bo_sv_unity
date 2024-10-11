@@ -33,9 +33,9 @@ export default function RootLayout({ children }: RootLayout) {
                 <div className="min-h-screen flex flex-col">
                     <Header tabs={{
                         "Home": "/",
-                        "Evenementen": "/events",
-                        "Inschrijven": "/enrol",
-                        "Inloggen": "/login",
+                        "Blog": "/blog",
+                        "Evenementen": "/evenementen",
+                        "Inschrijven": "/inschrijven",
                     }}/>
                     <main className="px-8 py-4 flex-1">
                         {children}

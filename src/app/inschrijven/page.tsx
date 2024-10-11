@@ -1,7 +1,7 @@
 export default function Signup() {
     return (
         <>
-            <h1>Enrol page</h1>
+            <h1>Inschrijf pagina</h1>
         </>
     );
 }

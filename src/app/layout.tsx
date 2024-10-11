@@ -5,9 +5,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Studenten Vereniging Unity",
+    title: "S.V. Unity",
     authors: [{ name: "Mick Negenman" }],
-    keywords: "MBO, Student, Studenten, Studenten Vereniging, SVUnity, Unity",
+    keywords: "MBO, Student, Studenten, Studenten Vereniging, Studenten Vereniging Unity, SVUnity, Unity",
     description: "De eerste MBO studenten vereniging van Nederland",
     openGraph: {
         title: "S.V. Unity",

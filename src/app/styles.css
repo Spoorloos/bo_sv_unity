@@ -31,4 +31,8 @@
     .hamburger-line {
         @apply w-full h-1 bg-current rounded inline-block absolute left-0 transition-all duration-300;
     }
+
+    .footer-column {
+        @apply font-bold font-kinetika uppercase text-lg;
+    }
 }

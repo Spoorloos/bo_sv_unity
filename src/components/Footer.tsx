@@ -8,7 +8,7 @@ import Twitter from "@/public/twitter.svg";
 
 export default function Footer() {
     return (
-        <footer className="px-[10%] py-3">
+        <footer className="px-[10%] pt-0 pb-3">
             <div className="mb-3 p-8 border-b-2 border-border grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
                 <ul className="space-y-2 text-start sm:text-start">
                     <li className="font-bold font-kinetika uppercase text-lg mb-2">Column 1</li>

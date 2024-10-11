@@ -27,4 +27,8 @@
     .accent-hover {
         @apply transition-colors text-gray-800 dark:text-gray-400 hover:text-accent;
     }
+
+    .hamburger-line {
+        @apply w-full h-1 bg-current rounded inline-block absolute left-0 transition-all duration-300;
+    }
 }

@@ -3,7 +3,6 @@ import Youtube from "@/public/youtube.svg";
 import Facebook from "@/public/facebook.svg";
 import Instagram from "@/public/instagram.svg";
 import Twitter from "@/public/twitter.svg";
-import Telegram from "@/public/telegram.svg";
 
 export default function Footer() {
     return (
@@ -40,12 +39,11 @@ export default function Footer() {
                     </section>
                     <section className="flex flex-col justify-between gap-2">
                         <h2 className="footer-column">Connect With Us</h2>
-                        <div className="h-8 flex gap-3 *:h-full *:*:h-full justify-start sm:justify-end lg:justify-start">
+                        <div className="h-7 flex gap-3 *:h-full *:*:h-full justify-start sm:justify-end lg:justify-start">
                             <Link href="#"><Instagram className="accent-hover"/></Link>
                             <Link href="#"><Youtube className="accent-hover"/></Link>
                             <Link href="#"><Facebook className="accent-hover"/></Link>
                             <Link href="#"><Twitter className="accent-hover"/></Link>
-                            <Link href="#"><Telegram className="accent-hover"/></Link>
                         </div>
                     </section>
                 </div>

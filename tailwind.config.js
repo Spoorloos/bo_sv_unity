@@ -14,6 +14,7 @@ export default {
                 background: "var(--background-color)",
                 text: "var(--text-color)",
                 border: "var(--border-color)",
+                footerContent: "var(--footer-content-color)",
             },
             fontFamily: {
                 kinetika: ["var(--font-kinetika)", "system-ui", "sans-serif"],

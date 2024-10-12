@@ -4,17 +4,19 @@
 
 @layer base {
     :root {
-        --accent-color: #488286;
-        --background-color: #E3E7EE;
-        --text-color: #000000;
-        --border-color: #CACFD8;
+        --accent-color: hsl(185, 30%, 40%);
+        --background-color: hsl(220, 25%, 90%);
+        --text-color: hsl(0, 0%, 10%);
+        --border-color: hsl(220, 15%, 80%);
+        --footer-content-color: hsl(215, 30%, 15%);
     }
 
     @media (prefers-color-scheme: dark) {
         :root {
-            --background-color: #1B2225;
-            --text-color: #FFFFFF;
-            --border-color: #343B3E;
+            --background-color: hsl(200, 15%, 15%);
+            --text-color: hsl(0, 0%, 90%);
+            --border-color: hsl(200, 10%, 25%);
+            --footer-content-color: hsl(220, 10%, 65%);
         }
     }
 
@@ -26,7 +28,7 @@
 
 @layer components {
     .accent-hover {
-        @apply transition-colors duration-100 text-gray-800 dark:text-gray-400 hover:text-accent;
+        @apply transition-colors duration-100 text-footerContent hover:text-accent;
     }
 
     .hamburger-line {

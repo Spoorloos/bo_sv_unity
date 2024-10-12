@@ -1,7 +1,11 @@
+const isExported =
+    process.env.NODE_ENV === "production" &&
+    process.env.VERCEL_ENV === undefined;
+
 /** @type {import("next").NextConfig} */
 export default {
     output: "export",
-    basePath: process.env.NODE_ENV === "production" ? "/bo/m5svunity" : undefined,
+    basePath: isExported ? "/bo/m5svunity" : undefined,
     webpack(config) {
         const fileLoaderRule = config.module.rules.find(
             (rule) => rule.test?.test?.(".svg")

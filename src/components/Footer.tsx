@@ -6,8 +6,8 @@ import Twitter from "@/public/twitter.svg";
 
 export default function Footer() {
     return (
-        <footer className="px-[10%] pb-3">
-            <div className="mb-3 p-8 border-b-2 border-border grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        <footer className="px-[10%]">
+            <div className="px-[5%] pb-6 border-b-2 border-border grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
                 <ul className="space-y-2 text-start sm:text-start">
                     <li className="footer-column">Column 1</li>
                     <li><Link className="accent-hover" href="#">Lorem, ipsum dolor.</Link></li>
@@ -48,7 +48,7 @@ export default function Footer() {
                     </section>
                 </div>
             </div>
-            <p className="text-center text-gray-500">S.V. Unity &copy; 2024</p>
+            <p className="py-3 text-center text-gray-500">S.V. Unity &copy; 2024</p>
         </footer>
     );
 }

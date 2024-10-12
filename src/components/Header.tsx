@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import { class$ } from "@/lib/functions";
 
 import Logo from "@/components/Logo";
 import Hamburger from "@/components/Hamburger";
@@ -25,7 +26,11 @@ export default function Header({ tabs }: Header) {
     return (
         <header className="mx-8 py-3 flex items-center justify-between border-b-2 border-border">
             <Logo className="h-16 w-auto text-[#313131] dark:text-[#D1D5DB]"/>
-            <nav className={`origin-top fixed sm:static inset-0 bg-background flex flex-col sm:flex-row gap-4 p-[10%] pt-24 sm:p-0 ${animate ? "transition-all duration-300" : ""} ${navEnabled ? "scale-y-100 opacity-100 open" : "scale-y-0 sm:transform-none opacity-0 sm:opacity-100 invisible sm:visible"}`}>
+            <nav className={class$(
+                "origin-top fixed sm:static inset-0 bg-background flex flex-col sm:flex-row gap-4 p-[10%] pt-24 sm:p-0",
+                navEnabled ? "scale-y-100 opacity-100 open" : "scale-y-0 sm:transform-none opacity-0 sm:opacity-100 invisible sm:visible",
+                animate && "transition-all duration-300",
+            )}>
                 {Object.entries(tabs).map(([name, url], index) =>
                     <NavItem
                         key={index}

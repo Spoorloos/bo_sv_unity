@@ -19,6 +19,7 @@
             "@/public/*": ["./public/*"],
             "@/components/*": ["./src/components/*"],
             "@/app/*": ["./src/app/*"],
+            "@/lib/*": ["./src/lib/*"],
         },
     },
     "include": [

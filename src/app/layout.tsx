@@ -1,6 +1,7 @@
-import "@/app/styles.css";
 import { type Metadata } from "next";
 import localFont from "next/font/local";
+
+import "@/app/styles.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -28,8 +29,8 @@ type RootLayout = Readonly<{
 
 export default function RootLayout({ children }: RootLayout) {
     return (
-        <html lang="nl" className={kinetika.variable}>
-            <body className="antialiased font-sans bg-background text-text">
+        <html lang="nl">
+            <body className={"antialiased font-sans bg-background text-text " + kinetika.variable}>
                 <div className="min-h-screen flex flex-col">
                     <Header tabs={{
                         "Home": "/",

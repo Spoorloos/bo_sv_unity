@@ -32,9 +32,9 @@ export default function Footer() {
                 <div className="grid sm:text-end lg:text-start">
                     <section className="space-y-2">
                         <h2 className="footer-column">Nieuwsbrief</h2>
-                        <form className="flex" action="https://youtube.com">
-                            <input className="w-full p-2 border border-border bg-transparent outline-none rounded-none" type="email" name="email" placeholder="E-mailadres" required/>
-                            <button className="p-2 transition-colors duration-100 text-background bg-gray-800 dark:bg-gray-400 hover:bg-accent font-kinetika uppercase" type="submit">Sub</button>
+                        <form className="flex news-letter" action="https://youtube.com">
+                            <input className="w-full p-2 border border-r-0 bg-transparent outline-none rounded-none transition-colors duration-100 border-[--color]" type="email" name="email" placeholder="E-mailadres" required/>
+                            <button className="p-2 text-background font-kinetika uppercase transition-colors duration-100 bg-[--color]" type="submit">Sub</button>
                         </form>
                     </section>
                     <section className="space-y-2 pt-8 sm:pt-0 mt-auto">

@@ -38,4 +38,12 @@
     .footer-column {
         @apply font-bold font-kinetika uppercase text-lg;
     }
+
+    .news-letter {
+        --color: var(--footer-content-color);
+    }
+
+    .news-letter:has(> button:hover) {
+        --color: var(--accent-color);
+    }
 }

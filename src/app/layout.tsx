@@ -32,12 +32,7 @@ export default function RootLayout({ children }: RootLayout) {
         <html lang="nl">
             <body className={"antialiased font-sans bg-background text-text " + kinetika.variable}>
                 <div className="min-h-screen flex flex-col">
-                    <Header tabs={{
-                        "Home": "/",
-                        "Blog": "/blog",
-                        "Evenementen": "/evenementen",
-                        "Inschrijven": "/inschrijven",
-                    }}/>
+                    <Header/>
                     <main className="px-8 py-4 flex-1">
                         {children}
                     </main>

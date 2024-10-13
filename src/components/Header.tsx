@@ -8,11 +8,14 @@ import Logo from "@/components/Logo";
 import Hamburger from "@/components/Hamburger";
 import NavItem from "@/components/NavItem";
 
-type Header = Readonly<{
-    tabs: Record<string, string>;
-}>;
+const tabs = {
+    "Home": "/",
+    "Blog": "/blog",
+    "Evenementen": "/evenementen",
+    "Inschrijven": "/inschrijven",
+} satisfies Record<string, string>;
 
-export default function Header({ tabs }: Header) {
+export default function Header() {
     const pathName = usePathname();
     const [navEnabled, setNavEnabled] = useState(false);
     const [animate, setAnimate] = useState(false);

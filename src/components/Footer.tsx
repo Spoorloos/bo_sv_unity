@@ -29,21 +29,21 @@ export default function Footer() {
                     <li><Link className="accent-hover" href="#">Lorem, ipsum.</Link></li>
                     <li><Link className="accent-hover" href="#">Lorem, ipsum dolor.</Link></li>
                 </ul>
-                <div className="flex flex-col justify-between text-start sm:text-end lg:text-start gap-8 sm:gap-0">
-                    <section className="flex flex-col justify-between gap-2">
+                <div className="grid text-start sm:text-end lg:text-start">
+                    <section className="space-y-2">
                         <h2 className="footer-column">Nieuwsbrief</h2>
                         <form className="flex" action="https://youtube.com">
                             <input className="w-full p-2 border border-border bg-transparent outline-none" type="email" name="email" placeholder="E-mailadres" required/>
                             <button className="p-2 transition-colors duration-100 text-background bg-gray-800 dark:bg-gray-400 hover:bg-accent font-kinetika uppercase" type="submit">Sub</button>
                         </form>
                     </section>
-                    <section className="flex flex-col justify-between gap-2">
+                    <section className="space-y-2 pt-8 sm:pt-0 mt-auto">
                         <h2 className="footer-column">Socials</h2>
-                        <div className="h-7 flex gap-3 *:h-full *:*:h-full justify-start sm:justify-end lg:justify-start">
-                            <Link href="#"><Instagram className="accent-hover"/></Link>
-                            <Link href="#"><Youtube className="accent-hover"/></Link>
-                            <Link href="#"><Facebook className="accent-hover"/></Link>
-                            <Link href="#"><Twitter className="accent-hover"/></Link>
+                        <div className="h-7 space-x-3 *:h-full *:*:h-full sm:text-end lg:text-start">
+                            <Link href="#"><Instagram className="inline accent-hover"/></Link>
+                            <Link href="#"><Youtube className="inline accent-hover"/></Link>
+                            <Link href="#"><Facebook className="inline accent-hover"/></Link>
+                            <Link href="#"><Twitter className="inline accent-hover"/></Link>
                         </div>
                     </section>
                 </div>

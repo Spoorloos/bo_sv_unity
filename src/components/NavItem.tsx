@@ -10,7 +10,7 @@ type NavItem = Readonly<{
 
 export default function NavItem({ name, href, selected, onClick }: NavItem) {
     return (
-        <Link className={clnms("transition-opacity uppercase", !selected && "opacity-50 hocus:opacity-100")} href={href} onClick={onClick}>
+        <Link className={clnms("transition-opacity uppercase block sm:inline", !selected && "opacity-50 hocus:opacity-100")} href={href} onClick={onClick}>
             <span className={clnms("transition-colors p-2 inline-block border-b-2 text-3xl sm:text-base font-kinetika", selected ? "border-accent" : "border-transparent")}>{name}</span>
         </Link>
     )

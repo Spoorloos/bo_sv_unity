@@ -40,10 +40,10 @@ export default function Footer() {
                     <section className="space-y-2 pt-8 sm:pt-0 mt-auto">
                         <h2 className="footer-column">Socials</h2>
                         <div className="h-7 space-x-3">
-                            <Link href="#"><Instagram className="inline h-full accent-hover"/></Link>
-                            <Link href="#"><Youtube className="inline h-full accent-hover"/></Link>
-                            <Link href="#"><Facebook className="inline h-full accent-hover"/></Link>
-                            <Link href="#"><Twitter className="inline h-full accent-hover"/></Link>
+                            <Link className="h-full inline-block accent-hover" href="#"><Instagram className="inline h-full"/></Link>
+                            <Link className="h-full inline-block accent-hover" href="#"><Youtube className="inline h-full"/></Link>
+                            <Link className="h-full inline-block accent-hover" href="#"><Facebook className="inline h-full"/></Link>
+                            <Link className="h-full inline-block accent-hover" href="#"><Twitter className="inline h-full"/></Link>
                         </div>
                     </section>
                 </div>

@@ -28,7 +28,7 @@
 
 @layer components {
     .accent-hover {
-        @apply transition-colors duration-100 text-footerContent hover:text-accent;
+        @apply transition-colors duration-100 text-footerContent hocus:text-accent;
     }
 
     .hamburger-line {
@@ -43,7 +43,7 @@
         --color: var(--footer-content-color);
     }
 
-    .news-letter:has(> button:hover) {
+    .news-letter:has(> button:is(:hover, :focus)) {
         --color: var(--accent-color);
     }
 }

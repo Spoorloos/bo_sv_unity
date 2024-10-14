@@ -10,8 +10,8 @@ import NavItem from "@/components/NavItem";
 
 const tabs = {
     "Home": "/",
-    "Blog": "/blog",
     "Evenementen": "/evenementen",
+    "Contact": "/contact",
     "Inschrijven": "/inschrijven",
 } satisfies Record<string, string>;
 

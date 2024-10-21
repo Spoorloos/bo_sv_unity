@@ -9,7 +9,7 @@ type MainLayout = Readonly<{
 export default function MainLayout({ children }: MainLayout) {
     return (
         <>
-            <div className="px-8 py-3 h-screen flex flex-col gap-3">
+            <div className="px-8 py-3 h-svh flex flex-col gap-3">
                 <Header/>
                 <Hero/>
             </div>

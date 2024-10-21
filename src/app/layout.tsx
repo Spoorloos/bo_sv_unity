@@ -1,9 +1,6 @@
+import "@/app/styles.css";
 import { type Metadata } from "next";
 import localFont from "next/font/local";
-
-import "@/app/styles.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
     title: "S.V. Unity",
@@ -31,13 +28,7 @@ export default function RootLayout({ children }: RootLayout) {
     return (
         <html lang="nl">
             <body className={"antialiased font-sans bg-background text-text " + kinetika.variable}>
-                <div className="min-h-screen flex flex-col">
-                    <Header/>
-                    <main className="px-8 py-4 flex-1">
-                        {children}
-                    </main>
-                </div>
-                <Footer/>
+                {children}
             </body>
         </html>
     );

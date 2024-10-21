@@ -10,11 +10,11 @@ export default {
     theme: {
         extend: {
             colors: {
-                accent: "var(--accent-color)",
-                background: "var(--background-color)",
-                text: "var(--text-color)",
-                border: "var(--border-color)",
-                footerContent: "var(--footer-content-color)",
+                accent: "hsl(from var(--accent-color) h s l / <alpha-value>)",
+                background: "hsl(from var(--background-color) h s l / <alpha-value>)",
+                text: "hsl(from var(--text-color) h s l / <alpha-value>)",
+                border: "hsl(from var(--border-color) h s l / <alpha-value>)",
+                footerContent: "hsl(from var(--footer-content-color) h s l / <alpha-value>)",
             },
             fontFamily: {
                 kinetika: ["var(--font-kinetika)", "system-ui", "sans-serif"],

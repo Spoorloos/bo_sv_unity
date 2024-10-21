@@ -4,7 +4,7 @@ const isExported =
 
 /** @type {import("next").NextConfig} */
 export default {
-    output: "export",
+    // output: "export",
     basePath: isExported ? "/bo/m5svunity" : undefined,
     webpack(config) {
         const fileLoaderRule = config.module.rules.find(

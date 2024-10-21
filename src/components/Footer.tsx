@@ -35,7 +35,7 @@ const socials = {
 
 export default function Footer() {
     return (
-        <footer className="px-[10%]">
+        <footer className="px-[10%] py-3">
             <nav className="px-[5%] pb-8 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
                 {Object.entries(links).map(([title, items], index) =>
                     <section key={index} className={clnms(index % 2 === 1 && "sm:text-end lg:text-start")}>
@@ -66,7 +66,7 @@ export default function Footer() {
                     </section>
                 </div>
             </nav>
-            <p className="py-3 text-center border-t-2 border-border text-gray-500">S.V. Unity &copy; 2024</p>
+            <p className="pt-3 text-center border-t-2 border-border text-footerContent font-thin">S.V. Unity &copy; 2024</p>
         </footer>
     );
 }

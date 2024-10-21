@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { clnms } from "@spoorloos/clnms";
 
 type NavItem = Readonly<{
     name: string;
@@ -11,10 +10,7 @@ type NavItem = Readonly<{
 export default function NavItem({ name, href, selected, onClick }: NavItem) {
     return (
         <Link className="uppercase block sm:inline" href={href} onClick={onClick} aria-label={`${name} pagina`} role="none" scroll={false}>
-            <span className={clnms(
-                "transition-colors p-2 inline-block border-b-2 text-text text-3xl sm:text-base font-kinetika",
-                selected ? "border-accent" : "border-transparent text-opacity-50 hocus:text-opacity-100")
-            }>{name}</span>
+            <span className={`transition-colors p-2 inline-block border-b-2 text-text text-3xl sm:text-base font-kinetika ${selected ? "border-accent" : "border-transparent text-opacity-50 hocus:text-opacity-100"}`}>{name}</span>
         </Link>
     )
 }

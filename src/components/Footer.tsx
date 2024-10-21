@@ -1,9 +1,8 @@
 import Link from "next/link";
-import { clnms } from "@spoorloos/clnms";
-import Youtube from "@/public/youtube.svg";
-import Facebook from "@/public/facebook.svg";
-import Instagram from "@/public/instagram.svg";
-import Twitter from "@/public/twitter.svg";
+import YoutubeIcon from "@/public/youtube.svg";
+import FacebookIcon from "@/public/facebook.svg";
+import InstagramIcon from "@/public/instagram.svg";
+import TwitterIcon from "@/public/twitter.svg";
 
 const links = {
     "Column 1": {
@@ -38,7 +37,7 @@ export default function Footer() {
         <footer className="px-[10%] py-3">
             <nav className="px-[5%] pb-8 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
                 {Object.entries(links).map(([title, items], index) =>
-                    <section key={index} className={clnms(index % 2 === 1 && "sm:text-end lg:text-start")}>
+                    <section key={index} className={index % 2 === 1 ? "sm:text-end lg:text-start" : undefined}>
                         <h2 className="footer-column mb-2">{title}</h2>
                         <ul className="space-y-2">
                             {Object.entries(items).map(([name, url], index) =>
@@ -58,10 +57,10 @@ export default function Footer() {
                     <section className="space-y-2 mt-auto">
                         <h2 className="footer-column">Socials</h2>
                         <div className="h-7 space-x-3">
-                            <Link className="h-full inline-block accent-hover" href={socials.instagram} target="_blank" aria-label="Instagram" title="Instagram"><Instagram className="inline h-full"/></Link>
-                            <Link className="h-full inline-block accent-hover" href={socials.youtube} target="_blank" aria-label="Youtube" title="Youtube"><Youtube className="inline h-full"/></Link>
-                            <Link className="h-full inline-block accent-hover" href={socials.facebook} target="_blank" aria-label="Facebook" title="Facebook"><Facebook className="inline h-full"/></Link>
-                            <Link className="h-full inline-block accent-hover" href={socials.twitter} target="_blank" aria-label="Twitter" title="Twitter"><Twitter className="inline h-full"/></Link>
+                            <Link className="h-full inline-block accent-hover" href={socials.instagram} target="_blank" aria-label="Instagram" title="Instagram"><InstagramIcon className="inline h-full"/></Link>
+                            <Link className="h-full inline-block accent-hover" href={socials.youtube} target="_blank" aria-label="Youtube" title="Youtube"><YoutubeIcon className="inline h-full"/></Link>
+                            <Link className="h-full inline-block accent-hover" href={socials.facebook} target="_blank" aria-label="Facebook" title="Facebook"><FacebookIcon className="inline h-full"/></Link>
+                            <Link className="h-full inline-block accent-hover" href={socials.twitter} target="_blank" aria-label="Twitter" title="Twitter"><TwitterIcon className="inline h-full"/></Link>
                         </div>
                     </section>
                 </div>

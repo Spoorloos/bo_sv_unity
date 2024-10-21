@@ -15,10 +15,20 @@ export default {
                 text: "hsl(from var(--text-color) h s l / <alpha-value>)",
                 border: "hsl(from var(--border-color) h s l / <alpha-value>)",
                 footerContent: "hsl(from var(--footer-content-color) h s l / <alpha-value>)",
+                brightAccent: "hsl(from var(--bright-accent) h s l / <alpha-value>)",
             },
             fontFamily: {
                 kinetika: ["var(--font-kinetika)", "system-ui", "sans-serif"],
             },
+            animation: {
+                "infinite-scroll": "infinite-scroll 20s linear infinite",
+            },
+            keyframes: {
+                "infinite-scroll": {
+                    from: { transform: "translateX(0)" },
+                    to: { transform: "translateX(-100%)" },
+                },
+            }
         },
     },
     plugins: [

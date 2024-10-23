@@ -1,14 +1,13 @@
-const isExported =
-    process.env.NODE_ENV === "production" &&
-    process.env.VERCEL_ENV === undefined;
+const isExported = process.env.NODE_ENV === "production";
+const isStatic = isExported && process.env.VERCEL_ENV === undefined;
 
 /** @type {import("next").NextConfig} */
 export default {
     output: "export",
-    basePath: isExported ? "/bo/m5svunity" : undefined,
+    basePath: isStatic ? "/bo/m5svunity" : undefined,
     images: { unoptimized: true },
     env: {
-        apiURL: "http://localhost:88/",
+        apiURL: isExported ? "https://spoorloos.xyz/bo/m5svunityapi" : "http://localhost:88/",
     },
     webpack(config) {
         const fileLoaderRule = config.module.rules.find(

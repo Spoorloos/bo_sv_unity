@@ -27,7 +27,7 @@ export default function EventCard({ event }: EventCard) {
                 <p className="text-lg font-thin">{event.content}</p>
             </div>
             <div className="[flex:_2_0_0]">
-                <img className="size-full object-cover rounded-lg" src={event.image_url} alt="event"/>
+                <img className="size-full object-cover" src={event.image_url} alt="event"/>
             </div>
         </article>
     )

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useIntersectionObserver } from "react-intersection-observer-hook";
 
 export type Event = Readonly<{
@@ -28,7 +27,7 @@ export default function EventCard({ event }: EventCard) {
                 <p className="text-lg font-thin">{event.content}</p>
             </div>
             <div className="[flex:_2_0_0]">
-                <Image className="size-full object-cover rounded-lg" src={event.image_url} alt="event" width="0" height="0"/>
+                <img className="size-full object-cover rounded-lg" src={event.image_url} alt="event"/>
             </div>
         </article>
     )

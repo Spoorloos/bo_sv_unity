@@ -34,7 +34,7 @@ const socials = {
 
 export default function Footer() {
     return (
-        <footer className="px-[10%] py-3">
+        <footer className="px-[10%] pb-3 pt-12">
             <nav className="px-[5%] pb-8 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
                 {Object.entries(links).map(([title, items], index) =>
                     <section key={index} className={index % 2 === 1 ? "sm:text-end lg:text-start" : undefined}>

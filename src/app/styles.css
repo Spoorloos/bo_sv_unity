@@ -20,11 +20,6 @@
             --footer-content-color: hsl(220, 10%, 65%);
         }
     }
-
-    /* Disable scrolling when the nav is open */
-    html:has(nav.open) {
-        overflow: hidden;
-    }
 }
 
 @layer components {

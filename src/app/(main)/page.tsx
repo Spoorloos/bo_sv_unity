@@ -4,7 +4,7 @@ import MicrosoftIcon from "@/public/microsoft.svg";
 
 export default function Home() {
     return (
-        <div className="px-[10%] pb-[5%] flex flex-col items-center gap-9">
+        <div className="px-[10%] flex flex-col items-center gap-9">
             <section className="text-center sm:self-start sm:text-start max-w-2xl">
                 <h2 className="text-4xl font-bold font-kinetika text-brightAccent text-drop">Onze Missie</h2>
                 <p className="text-lg font-thin">Onze missie is om een plek te creëren waar studenten zich thuis voelen en waar zij elkaar beter leren kennen, om zo de band met andere studenten van andere MBO's te bevorderen. Ook bouwen wij deze vereniging op met als doel om zo veel als mogelijk studenten van het MBO bij elkaar te brengen om zo het mbo gelijk te trekken met het HBO en WO.</p>

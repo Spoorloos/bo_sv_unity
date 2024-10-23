@@ -10,7 +10,7 @@ export default function Layout({ children }: PagesLayout) {
         <>
             <div className="min-h-svh px-8 py-3 flex flex-col gap-3">
                 <Header/>
-                <main>{children}</main>
+                {children}
             </div>
             <Footer/>
         </>

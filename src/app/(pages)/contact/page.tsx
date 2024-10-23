@@ -1,7 +1,7 @@
 export default function Login() {
     return (
-        <>
-            <h1>Contact pagina</h1>
-        </>
+        <main>
+            <h1 className="my-8 text-5xl font-bold font-kinetika">Contact</h1>
+        </main>
     );
 }

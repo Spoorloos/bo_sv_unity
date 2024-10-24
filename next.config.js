@@ -6,7 +6,7 @@ export default {
     output: isStatic ? "export" : undefined,
     basePath: isStatic ? "/bo/m5svunity" : undefined,
     env: {
-        apiURL: "https://spoorloos.xyz/bo/m5svunity/api",
+        apiURL: "https://spoorloos.xyz/bo/m5svunity/api/",
     },
     images: {
         unoptimized: isStatic || undefined,

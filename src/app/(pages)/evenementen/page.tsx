@@ -1,5 +1,7 @@
-import EventCard from "@/components/EventCard";
-import type { Event } from "@/components/EventCard";
+"use client";
+
+import useSWR from "swr";
+import EventCard, { type Event } from "@/components/EventCard";
 
 function isEvent(event: unknown): event is Event {
     return event !== null && typeof event === "object"
@@ -14,34 +16,30 @@ function isEvents(events: unknown): events is Event[] {
         && events.every(event => isEvent(event));
 }
 
-async function fetchEvents(): Promise<Event[] | Error> {
-    try {
-        const response = await fetch(process.env.apiURL!);
-        const events = await response.json();
-        if (isEvents(events)) {
-            return events;
-        }
-    } catch (error) {
-        return new Error("API encountered an error: " + error);
-    }
-    return new Error("API returned malformed data");
+async function fetcher(input: RequestInfo | URL, init?: RequestInit) {
+    const response = await fetch(input, init);
+    const parsed = await response.json();
+    return parsed;
 }
 
-export default async function Events() {
-    const events = await fetchEvents();
-    if (events instanceof Error) {
-        console.error(events);
-        return <main>Failed to get events from database</main>
-    }
+export default function Events() {
+    const { data, error, isLoading } = useSWR(process.env.apiURL!, fetcher);
+    const isError = error || !isEvents(data);
 
     return (
         <main>
             <h1 className="my-8 text-5xl font-bold font-kinetika">Evenementen</h1>
-            <div className="space-y-12">
-                {events.map((event, index) =>
-                    <EventCard event={event} key={index}/>
-                )}
-            </div>
+            {isLoading ? <>
+                <em>Aan het laden...</em>
+            </> : isError ? <>
+                <strong>Er is een probleem opgetreden tijdens het ophalen van de evenementen.<br/>Reload de pagina.</strong>
+            </> : <>
+                <div className="space-y-12">
+                    {data.map((event, index) =>
+                        <EventCard event={event} key={index}/>
+                    )}
+                </div>
+            </>}
         </main>
     );
 }

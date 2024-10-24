@@ -37,7 +37,7 @@ export default function Header() {
                         key={index}
                         name={name}
                         href={url}
-                        selected={(url === "/" && pathName === "/") || pathName.startsWith(url)}
+                        selected={url === "/" ? pathName === "/" : pathName.startsWith(url)}
                         onClick={() => void (navEnabled && toggleNavBar(false))}/>
                 )}
             </nav>

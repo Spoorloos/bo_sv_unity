@@ -47,10 +47,6 @@
         clip-path: polygon(28% 11%, 37.42% 22.17%, 56.14% 0%, 85.24% 0%, 60.42% 29.16%, 76.46% 17.08%, 83.06% 22.71%, 89.28% 22.71%, 89.42% 34.66%, 100% 34.49%, 100% 100%, 56.41% 100%, 43.31% 85.57%, 37.19% 92.21%, 0% 92%, 35.7% 51.54%, 2.16% 11%);
     }
 
-    .center-self {
-        @apply relative top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2;
-    }
-
     .text-drop {
         @apply relative after:absolute after:inset-0 after:ml-[0.05em] after:mt-[0.05em] after:-z-10;
     }

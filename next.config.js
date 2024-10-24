@@ -11,10 +11,10 @@ export default {
     images: {
         unoptimized: isStatic || undefined,
         remotePatterns: [{
-            protocol: 'https',
-            hostname: '**',
-            port: '',
-            pathname: '**',
+            protocol: "https",
+            hostname: "**",
+            port: "",
+            pathname: "**",
         }],
     },
     webpack: (config) => {

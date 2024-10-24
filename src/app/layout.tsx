@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: "S.V. Unity",
         type: "website",
         url: "https://sv-unity.spoorloos.xyz",
-        description: "De eerste studenten vereniging van Nederland!"
+        description: "De eerste MBO studenten vereniging van Nederland"
     },
 }
 

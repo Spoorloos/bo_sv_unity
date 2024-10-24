@@ -10,11 +10,7 @@ export type Event = Readonly<{
     date: string;
 }>;
 
-type EventCard = Readonly<{
-    event: Event;
-}>;
-
-export default function EventCard({ event }: EventCard) {
+export default function EventCard({ title, content, image_url, date }: Event) {
     const [ref, { entry }] = useIntersectionObserver({
         threshold: 0.65,
     });
@@ -23,12 +19,12 @@ export default function EventCard({ event }: EventCard) {
     return (
         <article className={"flex flex-col items-stretch gap-8 lg:flex-row transition-opacity " + (isVisible ? "" : "lg:opacity-40")} ref={ref}>
             <div className="[flex:_3_0_0]">
-                <h2 className="text-4xl font-bold text-brightAccent">{event.title}</h2>
-                <time className="font-thin text-text/50" dateTime={event.date}>{new Date(event.date).toDateString()}</time>
-                <p className="text-lg font-thin">{event.content}</p>
+                <h2 className="text-4xl font-bold text-brightAccent">{title}</h2>
+                <time className="font-thin text-text/50" dateTime={date}>{new Date(date).toDateString()}</time>
+                <p className="text-lg font-thin">{content}</p>
             </div>
             <div className="[flex:_2_0_0] min-h-96 relative">
-                <Image className="object-cover" src={event.image_url} alt="event" fill/>
+                <Image className="object-cover" src={image_url} alt="event" fill/>
             </div>
         </article>
     )

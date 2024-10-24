@@ -32,13 +32,13 @@ export default function Events() {
             {isLoading ? <>
                 <em>Aan het laden...</em>
             </> : isError ? <>
-                <strong>Er is een probleem opgetreden tijdens het ophalen van de evenementen.<br/>Reload de pagina.</strong>
+                <strong>Er is een probleem opgetreden tijdens het ophalen van de evenementen. Reload de pagina.</strong>
             </> : <>
-                <div className="space-y-12">
+                <ul className="space-y-12">
                     {data.map((event, index) =>
-                        <EventCard event={event} key={index}/>
+                        <li key={index}><EventCard {...event}/></li>
                     )}
-                </div>
+                </ul>
             </>}
         </main>
     );

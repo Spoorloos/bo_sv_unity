@@ -27,7 +27,7 @@ export default function EventCard({ event }: EventCard) {
                 <time className="font-thin text-text/50" dateTime={event.date}>{new Date(event.date).toDateString()}</time>
                 <p className="text-lg font-thin">{event.content}</p>
             </div>
-            <div className="[flex:_2_0_0] relative">
+            <div className="[flex:_2_0_0] min-h-96 relative">
                 <Image className="object-cover" src={event.image_url} alt="event" fill/>
             </div>
         </article>

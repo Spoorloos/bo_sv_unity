@@ -54,4 +54,12 @@
     .text-drop {
         @apply relative after:absolute after:inset-0 after:ml-[0.05em] after:mt-[0.05em] after:-z-10;
     }
+
+    .textfield {
+        @apply px-3 py-2 bg-transparent border border-border transition-colors duration-100 hocus:border-accent rounded-lg outline-none;
+    }
+
+    .accent-button {
+        @apply inline-block bg-accent px-4 py-2 rounded-full font-bold transition-colors hocus:bg-opacity-80 text-white;
+    }
 }

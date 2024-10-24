@@ -10,8 +10,8 @@ export default function Hero() {
                 <p className="mt-2 text-xl font-thin">De MBO studentenvereniging van Amsterdam, waar vriendschap, groei en onvergetelijke ervaringen samenkomen!</p>
                 <Link className="accent-button mt-3" href="/inschrijven" scroll={false}>Schrijf je in</Link>
             </div>
-            <div className="w-fit h-full overflow-auto">
-                <Image className="x-shape w-auto max-w-full max-h-full aspect-square object-cover center-self" src={hero} alt="background"/>
+            <div className="inline-block overflow-hidden max-h-[85%] aspect-[4/3]">
+                <Image className="x-shape size-full object-cover" src={hero} alt="background"/>
             </div>
         </section>
     );

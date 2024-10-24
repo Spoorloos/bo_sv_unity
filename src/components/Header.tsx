@@ -27,7 +27,7 @@ export default function Header() {
     }
 
     return (
-        <header className="pb-3 flex items-center justify-between border-b-2 border-border">
+        <header className="pb-3 flex items-center justify-between border-b-2 border-border z-10">
             <Link href="/" aria-label="Home pagina" scroll={false}>
                 <Logo className="h-16 w-auto text-[#313131] dark:text-[#D1D5DB]"/>
             </Link>

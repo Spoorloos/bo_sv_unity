@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useIntersectionObserver } from "react-intersection-observer-hook";
 
 export type Event = Readonly<{
@@ -26,8 +27,8 @@ export default function EventCard({ event }: EventCard) {
                 <time className="font-thin text-text/50" dateTime={event.date}>{new Date(event.date).toDateString()}</time>
                 <p className="text-lg font-thin">{event.content}</p>
             </div>
-            <div className="[flex:_2_0_0]">
-                <img className="size-full object-cover" src={event.image_url} alt="event"/>
+            <div className="[flex:_2_0_0] relative">
+                <Image src={event.image_url} alt="event" objectFit="cover" fill/>
             </div>
         </article>
     )

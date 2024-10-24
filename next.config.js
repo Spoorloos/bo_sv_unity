@@ -5,11 +5,17 @@ const isStatic = isBuild && process.env.VERCEL_ENV === undefined;
 export default {
     output: isStatic ? "export" : undefined,
     basePath: isStatic ? "/bo/m5svunity" : undefined,
+    env: {
+        apiURL: "https://spoorloos.xyz/bo/m5svunity/api",
+    },
     images: {
         unoptimized: isStatic || undefined,
-    },
-    env: {
-        apiURL: "https://spoorloos.xyz/bo/m5svunityapi",
+        remotePatterns: [{
+            protocol: 'https',
+            hostname: '**',
+            port: '',
+            pathname: '**',
+        }],
     },
     webpack: (config) => {
         const fileLoaderRule = config.module.rules.find(

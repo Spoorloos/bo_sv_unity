@@ -5,6 +5,7 @@ const isStatic = isBuild && process.env.VERCEL_ENV === undefined;
 export default {
     output: isStatic ? "export" : undefined,
     basePath: isStatic ? "/bo/m5svunity" : undefined,
+    trailingSlash: isStatic || undefined,
     env: {
         apiURL: "https://spoorloos.xyz/bo/m5svunity/api/",
     },

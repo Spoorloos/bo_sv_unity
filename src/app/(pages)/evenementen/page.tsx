@@ -16,8 +16,8 @@ function isEvents(events: unknown): events is Event[] {
         && events.every(event => isEvent(event));
 }
 
-async function fetcher(input: RequestInfo | URL, init?: RequestInit) {
-    const response = await fetch(input, init);
+async function fetcher(...args: Parameters<typeof fetch>) {
+    const response = await fetch(...args);
     const parsed = await response.json();
     return parsed;
 }

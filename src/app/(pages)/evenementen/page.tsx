@@ -35,7 +35,7 @@ export default async function Events() {
     }
 
     return (
-        <main className="text-center sm:text-left">
+        <main>
             <h1 className="my-8 text-5xl font-bold font-kinetika">Evenementen</h1>
             <div className="space-y-12">
                 {events.map((event, index) =>

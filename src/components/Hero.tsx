@@ -8,7 +8,7 @@ export default function Hero() {
             <div className="text-center md:text-left max-w-md">
                 <h1 className="text-7xl font-bold font-kinetika text-drop after:content-['S.V._Unity'] after:text-accent">S.V. Unity</h1>
                 <p className="mt-2 text-xl font-thin">De MBO studentenvereniging van Amsterdam, waar vriendschap, groei en onvergetelijke ervaringen samenkomen!</p>
-                <Link className="accent-button mt-3" href="/inschrijven">Schrijf je in</Link>
+                <Link className="accent-button mt-3" href="/inschrijven" scroll={false}>Schrijf je in</Link>
             </div>
             <div className="w-fit h-full overflow-auto">
                 <Image className="x-shape w-auto max-w-full max-h-full aspect-square object-cover center-self" src={hero} alt="background"/>

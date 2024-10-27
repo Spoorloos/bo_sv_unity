@@ -11,9 +11,8 @@ function isEvent(event: unknown): event is Event {
         && "date" in event;
 }
 
-function isEvents(events: unknown): events is Event[] {
-    return Array.isArray(events)
-        && events.every(event => isEvent(event));
+function getEvents(events: unknown[]): Event[] {
+    return events.filter(isEvent);
 }
 
 async function fetcher(...args: Parameters<typeof fetch>) {
@@ -24,18 +23,17 @@ async function fetcher(...args: Parameters<typeof fetch>) {
 
 export default function Events() {
     const { data, error, isLoading } = useSWR(process.env.apiURL!, fetcher);
-    const isError = error || !isEvents(data);
 
     return (
         <main>
             <h1 className="my-8 text-5xl font-bold font-kinetika">Evenementen</h1>
             {isLoading ? <>
                 <em>Aan het laden...</em>
-            </> : isError ? <>
-                <strong>Er is een probleem opgetreden tijdens het ophalen van de evenementen. Reload de pagina.</strong>
+            </> : error ? <>
+                <strong>Er is een probleem opgetreden tijdens het ophalen van de evenementen. Herlaad de pagina.</strong>
             </> : <>
-                <ul className="space-y-12">
-                    {data.map((event, index) =>
+                <ul className="space-y-12 empty:after:content-['Er_zijn_momenteel_geen_evenementen.']">
+                    {getEvents(data).map((event, index) =>
                         <li key={index}><EventCard {...event}/></li>
                     )}
                 </ul>

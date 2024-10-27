@@ -2,6 +2,7 @@
 
 import useSWR from "swr";
 import EventCard, { type Event } from "@/components/EventCard";
+import { useClosest } from "@/lib/hooks";
 
 function isEvent(event: unknown): event is Event {
     return event !== null && typeof event === "object"
@@ -23,6 +24,7 @@ async function fetcher(...args: Parameters<typeof fetch>) {
 
 export default function Events() {
     const { data, error, isLoading } = useSWR(process.env.apiURL!, fetcher);
+    const [ ref, closest ] = useClosest();
 
     return (
         <main>
@@ -32,9 +34,9 @@ export default function Events() {
             </> : error ? <>
                 <strong>Er is een probleem opgetreden tijdens het ophalen van de evenementen. Herlaad de pagina.</strong>
             </> : <>
-                <ul className="space-y-12 empty:after:content-['Er_zijn_momenteel_geen_evenementen.']">
+                <ul className="space-y-12 empty:after:content-['Er_zijn_momenteel_geen_evenementen.']" ref={ref}>
                     {getEvents(data).map((event, index) =>
-                        <li key={index}><EventCard {...event}/></li>
+                        <li className={`transition-opacity ${closest === index ? "" : "opacity-40"}`} key={index}><EventCard {...event}/></li>
                     )}
                 </ul>
             </>}

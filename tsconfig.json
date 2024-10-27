@@ -17,20 +17,13 @@
     "jsx": "preserve",
     "incremental": true,
     "plugins": [
-      {
-        "name": "next"
-      }
+      { "name": "next" }
     ],
     "paths": {
-      "@/public/*": [
-        "./public/*"
-      ],
-      "@/components/*": [
-        "./src/components/*"
-      ],
-      "@/app/*": [
-        "./src/app/*"
-      ]
+      "@/public/*": [ "./public/*" ],
+      "@/components/*": [ "./src/components/*" ],
+      "@/app/*": [ "./src/app/*" ],
+      "@/lib/*": [ "./src/lib/*" ]
     },
     "target": "ES2017"
   },

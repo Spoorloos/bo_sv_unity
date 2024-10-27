@@ -6,10 +6,10 @@ import { useClosest } from "@/lib/hooks";
 
 function isEvent(event: unknown): event is Event {
     return event !== null && typeof event === "object"
-        && "title" in event
-        && "content" in event
-        && "image_url" in event
-        && "date" in event;
+        && typeof (event as Event).title === "string"
+        && typeof (event as Event).content === "string"
+        && typeof (event as Event).image_url === "string"
+        && typeof (event as Event).date === "string";
 }
 
 function getEvents(events: unknown[]): Event[] {

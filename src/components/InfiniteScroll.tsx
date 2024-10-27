@@ -10,9 +10,9 @@ export default function InfiniteScroll({ className, children }: InfiniteScroll) 
         <li className="h-full inline-block">{item}</li>
     );
     return (
-        <ul className={"max-w-fit relative whitespace-nowrap overflow-hidden " + (className ?? "")}>
-            <div className="w-max h-full inline-block relative animate-infinite-scroll">{items}</div>
-            <div className=" w-max h-full inline-block absolute animate-infinite-scroll">{items}</div>
-        </ul>
+        <div className={"max-w-fit relative whitespace-nowrap overflow-hidden " + (className ?? "")}>
+            <ul className="w-max h-full inline-block relative animate-infinite-scroll">{items}</ul>
+            <ul className=" w-max h-full inline-block absolute animate-infinite-scroll">{items}</ul>
+        </div>
     );
 }

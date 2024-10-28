@@ -25,13 +25,6 @@ const links = {
     },
 } satisfies Record<string, Record<string, string>>;
 
-const socials = {
-    instagram: "https://instagram.com/",
-    youtube: "https://youtube.com/",
-    facebook: "https://facebook.com/",
-    twitter: "https://twitter.com/",
-} as const;
-
 export default function Footer() {
     return (
         <footer className="px-[10%] pb-3 pt-12">
@@ -57,10 +50,10 @@ export default function Footer() {
                     <section className="space-y-2 mt-auto">
                         <h2 className="footer-column">Socials</h2>
                         <div className="h-7 space-x-3">
-                            <Link className="h-full inline-block accent-hover" href={socials.instagram} target="_blank" aria-label="Instagram" title="Instagram"><InstagramIcon className="inline h-full"/></Link>
-                            <Link className="h-full inline-block accent-hover" href={socials.youtube} target="_blank" aria-label="Youtube" title="Youtube"><YoutubeIcon className="inline h-full"/></Link>
-                            <Link className="h-full inline-block accent-hover" href={socials.facebook} target="_blank" aria-label="Facebook" title="Facebook"><FacebookIcon className="inline h-full"/></Link>
-                            <Link className="h-full inline-block accent-hover" href={socials.twitter} target="_blank" aria-label="Twitter" title="Twitter"><TwitterIcon className="inline h-full"/></Link>
+                            <Link className="h-full inline-block accent-hover" href="https://instagram.com/" target="_blank" aria-label="Instagram" title="Instagram"><InstagramIcon className="inline h-full"/></Link>
+                            <Link className="h-full inline-block accent-hover" href="https://youtube.com/" target="_blank" aria-label="Youtube" title="Youtube"><YoutubeIcon className="inline h-full"/></Link>
+                            <Link className="h-full inline-block accent-hover" href="https://facebook.com/" target="_blank" aria-label="Facebook" title="Facebook"><FacebookIcon className="inline h-full"/></Link>
+                            <Link className="h-full inline-block accent-hover" href="https://twitter.com/" target="_blank" aria-label="Twitter" title="Twitter"><TwitterIcon className="inline h-full"/></Link>
                         </div>
                     </section>
                 </div>

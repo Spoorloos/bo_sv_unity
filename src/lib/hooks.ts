@@ -3,22 +3,23 @@ import { useState, useCallback } from "react";
 export function useClosest() {
     const [ closest, setClosest ] = useState<number | null>(null);
 
-    const ref = useCallback((element: HTMLElement | null) => {
+    const ref = useCallback((element: Element | null) => {
         if (element === null) return;
         const children = element.children;
 
         const onScroll = () => {
             let closestIndex = null;
             let closestDistance = Infinity;
+            const screenCenter = window.outerHeight/2;
 
-            for (let i = 0; i < children.length; i++) {
-                const child = children[i];
+            for (let index = 0; index < children.length; index++) {
+                const child = children[index];
                 const { y, height } = child.getBoundingClientRect();
-                const distance = Math.abs(y + height/2 - window.outerHeight/2);
+                const distance = Math.abs(y + height/2 - screenCenter);
 
                 if (distance < closestDistance) {
                     closestDistance = distance;
-                    closestIndex = i;
+                    closestIndex = index;
                 }
             }
 

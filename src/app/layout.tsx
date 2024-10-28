@@ -1,5 +1,6 @@
 import "@/app/styles.css";
 import { type Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import localFont from "next/font/local";
 
 export const metadata: Metadata = {
@@ -29,6 +30,7 @@ export default function RootLayout({ children }: RootLayout) {
         <html className="has-[nav.open]:overflow-hidden" lang="nl">
             <body className={"antialiased font-sans bg-background text-text " + kinetika.variable}>
                 {children}
+                <SpeedInsights/>
             </body>
         </html>
     );

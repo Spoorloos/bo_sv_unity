@@ -13,7 +13,7 @@ export default function MainLayout({ children }: MainLayout) {
                 <Header/>
                 <Hero/>
             </div>
-            <main className="px-8 py-3">{children}</main>
+            <main className="px-8 pb-3 pt-12">{children}</main>
             <Footer/>
         </>
     )

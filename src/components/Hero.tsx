@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Hero() {
     return (
-        <section className="h-full overflow-auto flex flex-col justify-between items-center gap-3 md:flex-row lg:px-8 pt-8 md:pt-0">
+        <section className="h-full overflow-auto flex flex-col justify-around items-center gap-8 md:flex-row">
             <div className="text-center md:text-left max-w-md">
                 <h1 className="text-7xl font-bold font-kinetika text-drop after:content-['S.V._Unity'] after:text-accent">S.V. Unity</h1>
                 <p className="mt-2 text-xl font-thin">De MBO studentenvereniging van Amsterdam, waar vriendschap, groei en onvergetelijke ervaringen samenkomen!</p>

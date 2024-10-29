@@ -42,9 +42,9 @@ export default function Footer() {
                 <div className="grid sm:text-end lg:text-start gap-6 sm:gap-0">
                     <section className="space-y-2">
                         <h2 className="footer-column">Nieuwsbrief</h2>
-                        <form className="inline-flex news-letter max-w-72" method="POST" action="/nieuwsbrief">
-                            <input className="w-full p-2 border border-r-0 bg-transparent outline-none rounded-none transition-colors duration-100 border-[--color]" type="email" name="email" placeholder="Jouw e-mailadres" required/>
-                            <button className="p-2 text-background font-kinetika uppercase transition-colors duration-100 bg-[--color]" type="submit" aria-label="Abonneer op nieuwsbrief knop" title="Abonneer op onze nieuwsbrief">Sub</button>
+                        <form className="inline-flex max-w-72 group" method="POST" action="/nieuwsbrief">
+                            <input className="w-full p-2 border border-r-0 border-footerContent bg-transparent outline-none rounded-none transition-colors duration-100 group-hocus-within:border-accent" type="email" name="email" placeholder="Jouw e-mailadres" required/>
+                            <button className="p-2 bg-footerContent text-background font-kinetika uppercase transition-colors duration-100 group-hocus-within:bg-accent" type="submit" aria-label="Abonneer op nieuwsbrief knop" title="Abonneer op onze nieuwsbrief">Sub</button>
                         </form>
                     </section>
                     <section className="space-y-2 mt-auto">

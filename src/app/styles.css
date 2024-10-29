@@ -35,21 +35,13 @@
         @apply font-bold font-kinetika uppercase text-lg;
     }
 
-    .news-letter {
-        --color: theme("colors.footerContent");
-    }
-
-    .news-letter:has(> button:is(:hover, :focus)) {
-        --color: theme("colors.accent");
-    }
-
     .text-field {
         @apply px-3 py-2 bg-transparent border border-border transition-colors duration-100 hocus:border-accent rounded-lg outline-none;
     }
 
-    /* .text-field::-webkit-calendar-picker-indicator {
+    .text-field::-webkit-calendar-picker-indicator {
         @apply dark:invert;
-    } */
+    }
 
     .accent-button {
         @apply inline-block bg-accent px-4 py-2 rounded-full font-bold transition-colors hocus:bg-opacity-80 text-white;
@@ -57,7 +49,7 @@
 }
 
 @layer utilities {
-    .text-drop {
+    .text-drop-accent {
         text-shadow: 0.05em 0.05em theme("colors.accent");
     }
 

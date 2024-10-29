@@ -1,4 +1,4 @@
-import plugin from "tailwindcss/plugin";
+import hocusPlugin from "tailwindcss-hocus";
 
 /** @type {import("tailwindcss").Config} */
 export default {
@@ -32,8 +32,6 @@ export default {
         },
     },
     plugins: [
-        plugin((plugin) => {
-            plugin.addVariant("hocus", ["&:hover", "&:focus"]);
-        }),
+        hocusPlugin,
     ],
 }

@@ -32,8 +32,8 @@ export default {
         },
     },
     plugins: [
-        plugin(({ addVariant }) => {
-            addVariant("hocus", ["&:hover", "&:focus"]);
+        plugin((plugin) => {
+            plugin.addVariant("hocus", ["&:hover", "&:focus"]);
         }),
     ],
 }

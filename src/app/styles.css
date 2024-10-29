@@ -20,7 +20,7 @@
     }
 
     .text-field::-webkit-calendar-picker-indicator {
-        @apply dark:invert;
+        @apply invert;
     }
 
     .accent-button {

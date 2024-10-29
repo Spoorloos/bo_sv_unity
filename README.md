@@ -34,7 +34,12 @@ A website for the student association "Unity" (S.V. Unity) in Amsterdam.
    git clone https://github.com/Spoorloos/sv_unity && cd sv_unity
    ```
 
-2. Start the development server
+2. Install project dependencies
+   ```bash
+   pnpm i
+   ```
+
+3. Start the development server
    ```bash
    pnpm run dev
    ```

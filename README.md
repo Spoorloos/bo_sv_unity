@@ -1,4 +1,4 @@
-# Website for S.V. Unity
+# S.V. Unity
 
 This is my final project for BO Module 5 "S.V Unity".
 
@@ -31,7 +31,7 @@ A website for the student association "Unity" (S.V. Unity) in Amsterdam.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Spoorloos/sv_unity && cd sv_unity
+   git clone https://github.com/Spoorloos/bo_sv_unity.git && cd bo_sv_unity
    ```
 
 2. Install project dependencies

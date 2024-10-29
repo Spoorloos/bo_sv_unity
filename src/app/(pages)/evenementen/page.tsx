@@ -25,7 +25,7 @@ export default function Events() {
 
     return (
         <main>
-            <h1 className="my-8 text-5xl font-bold font-kinetika">Evenementen</h1>
+            <h1 className="py-8 text-5xl font-bold font-kinetika">Evenementen</h1>
             {isLoading ? <>
                 <em>Aan het laden...</em>
             </> : error ? <>

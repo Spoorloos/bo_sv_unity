@@ -23,9 +23,9 @@ A website for the student association "Unity" (S.V. Unity) in Amsterdam.
 
 ### Prerequisites
 
-- Git
-- NodeJS
-- PNPM
+- [Git](https://git-scm.com/downloads)
+- [NodeJS](https://nodejs.org/en/download/package-manager)
+- [PNPM](https://pnpm.io/installation#using-npm)
 
 ### Getting started
 

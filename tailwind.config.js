@@ -10,12 +10,12 @@ export default {
     theme: {
         extend: {
             colors: {
-                accent: "hsl(from var(--accent-color) h s l / <alpha-value>)",
-                background: "hsl(from var(--background-color) h s l / <alpha-value>)",
-                text: "hsl(from var(--text-color) h s l / <alpha-value>)",
-                border: "hsl(from var(--border-color) h s l / <alpha-value>)",
-                footerContent: "hsl(from var(--footer-content-color) h s l / <alpha-value>)",
-                brightAccent: "hsl(from var(--bright-accent) h s l / <alpha-value>)",
+                accent: "hsl(185 30% 40% / <alpha-value>)",
+                brightAccent: "hsl(185 30% 60% / <alpha-value>)",
+                background: "hsl(200 15% 15% / <alpha-value>)",
+                text: "hsl(0 0% 90% / <alpha-value>)",
+                border: "hsl(200 10% 25% / <alpha-value>)",
+                footerContent: "hsl(220 10% 65% / <alpha-value>)",
             },
             fontFamily: {
                 kinetika: ["var(--font-kinetika)", "system-ui", "sans-serif"],

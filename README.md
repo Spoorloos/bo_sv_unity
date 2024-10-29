@@ -2,6 +2,8 @@
 
 This is my final project for BO Module 5 "S.V Unity".
 
+[screenshot](/screenshot.png)
+
 ## About
 
 A website for the student association "Unity" (S.V. Unity) in Amsterdam.

@@ -19,7 +19,7 @@ export default function Home() {
             </section>
             <section className="max-w-full text-center">
                 <h2 className="text-4xl font-bold font-kinetika text-brightAccent">Onze Partners</h2>
-                <InfiniteScroll className="max-w-full h-32">
+                <InfiniteScroll className="h-32">
                     <AppleIcon className="inline h-full accent-hover"/>
                     <MicrosoftIcon className="inline h-full accent-hover"/>
                     <AppleIcon className="inline h-full accent-hover"/>

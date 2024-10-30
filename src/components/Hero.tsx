@@ -11,7 +11,7 @@ export default function Hero() {
                 <Link className="accent-button" href="/inschrijven" scroll={false}>Schrijf je in</Link>
             </div>
             <div className="inline-block overflow-hidden max-h-[85%] aspect-[4/3]">
-                <Image className="x-shape size-full object-cover" src={hero} alt="background"/>
+                <Image className="x-shape size-full object-cover" src={hero} alt="background" priority/>
             </div>
         </section>
     );

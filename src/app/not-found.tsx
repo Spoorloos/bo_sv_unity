@@ -10,7 +10,7 @@ export default function NotFound() {
                 <span className="text-3xl pe-4 border-e border-border">404</span>
                 <span className="text-xl ps-4 font-thin">This page could not be found</span>
             </div>
-            <button className="text-text hocus:text-opacity-80" type="button" onClick={() => router.back()}>&larr; Go back</button>
+            <button className="text-text hocus:text-opacity-80" onClick={() => router.back()}>&larr; Go back</button>
         </div>
     );
 }

@@ -31,7 +31,7 @@ export default function Footer() {
             <nav className="px-[5%] pb-8 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
                 {Object.entries(links).map(([title, items], index) =>
                     <section key={index} className={index % 2 === 1 ? "sm:text-end lg:text-start" : undefined}>
-                        <h2 className="footer-column mb-2">{title}</h2>
+                        <h2 className="footer-column">{title}</h2>
                         <ul className="space-y-2">
                             {Object.entries(items).map(([name, url], index) =>
                                 <li key={index}><Link className="accent-hover" href={url}>{name}</Link></li>
@@ -41,14 +41,14 @@ export default function Footer() {
                 )}
                 <div className="sm:text-end lg:text-start flex flex-col justify-between gap-6 sm:gap-0">
                     <section>
-                        <h2 className="footer-column mb-2">Nieuwsbrief</h2>
+                        <h2 className="footer-column">Nieuwsbrief</h2>
                         <form className="inline-flex max-w-72 group" method="POST" action="/nieuwsbrief">
                             <input className="w-full p-2 border border-r-0 border-footerContent bg-transparent outline-none rounded-none transition-colors duration-100 group-hocus-within:border-accent" type="email" name="email" placeholder="Jouw e-mailadres" required/>
                             <button className="p-2 bg-footerContent text-background font-kinetika uppercase transition-colors duration-100 group-hocus-within:bg-accent" type="submit" aria-label="Abonneer op nieuwsbrief knop" title="Abonneer op onze nieuwsbrief">Sub</button>
                         </form>
                     </section>
                     <section>
-                        <h2 className="footer-column mb-2">Socials</h2>
+                        <h2 className="footer-column">Socials</h2>
                         <ul className="h-8 space-x-3 *:inline">
                             <li><Link className="h-full inline-block accent-hover *:h-full" href="https://instagram.com/" target="_blank" aria-label="Instagram" title="Instagram"><InstagramIcon/></Link></li>
                             <li><Link className="h-full inline-block accent-hover *:h-full" href="https://youtube.com/" target="_blank" aria-label="Youtube" title="Youtube"><YoutubeIcon/></Link></li>

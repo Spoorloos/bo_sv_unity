@@ -1,6 +1,8 @@
+import { MouseEventHandler } from "react";
+
 type Hamburger = Readonly<{
     toggled?: boolean;
-    onToggle?: () => void
+    onToggle?: MouseEventHandler<HTMLButtonElement>,
 }>;
 
 export default function Hamburger({ toggled, onToggle }: Hamburger) {

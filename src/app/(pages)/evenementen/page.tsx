@@ -7,13 +7,13 @@ import EventCard, { type Event } from "@/components/EventCard";
 
 function isEvent(event: unknown): event is Event {
     return event !== null && typeof event === "object"
-        && typeof (event as Event).title === "string"
-        && typeof (event as Event).content === "string"
-        && typeof (event as Event).image_url === "string"
-        && typeof (event as Event).date === "string";
+        && "title" in event
+        && "content" in event
+        && "image_url" in event
+        && "date" in event;
 }
 
-function getEvents(events: unknown): Event[] {
+function getEvents(events: unknown) {
     return Array.isArray(events) ? events.filter(isEvent) : [];
 }
 

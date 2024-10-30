@@ -12,7 +12,7 @@
     }
 
     .footer-column {
-        @apply font-bold font-kinetika uppercase text-lg;
+        @apply font-bold font-kinetika uppercase text-lg mb-2;
     }
 
     .text-field {

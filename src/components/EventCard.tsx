@@ -16,7 +16,12 @@ export default function EventCard({ title, content, image_url, date }: Event) {
                 <p className="text-lg font-thin">{content}</p>
             </div>
             <div className="[flex:_2_0_0] min-h-96 relative">
-                <Image className="object-cover" src={image_url} alt="event" fill/>
+                <Image
+                    className="object-cover"
+                    src={image_url}
+                    alt="event"
+                    sizes="(min-width: 1024px) 40vw, 100vw"
+                    fill/>
             </div>
         </article>
     )

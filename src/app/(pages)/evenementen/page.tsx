@@ -33,7 +33,7 @@ export default function Events() {
             </> : <>
                 <ul className="space-y-12 empty:after:content-['Er_zijn_momenteel_geen_evenementen.']" ref={ref}>
                     {getEvents(data).map((event, index) =>
-                        <li className={`transition-opacity ${closest === index ? "" : "opacity-40"}`} key={index}><EventCard {...event}/></li>
+                        <li className={`transition-opacity ${closest !== index ? "opacity-40" : ""}`} key={index}><EventCard {...event}/></li>
                     )}
                 </ul>
             </>}

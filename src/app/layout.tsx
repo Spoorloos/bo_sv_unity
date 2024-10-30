@@ -26,8 +26,8 @@ type RootLayout = Readonly<{
 
 export default function RootLayout({ children }: RootLayout) {
     return (
-        <html className="has-[nav.open]:overflow-hidden" lang="nl">
-            <body className={"antialiased font-sans bg-background text-text " + kinetika.variable}>
+        <html className="has-[nav[data-open=true]]:overflow-y-hidden" lang="nl">
+            <body className={`antialiased font-sans bg-background text-text ${kinetika.variable}`}>
                 {children}
             </body>
         </html>

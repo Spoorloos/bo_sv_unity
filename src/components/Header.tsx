@@ -4,7 +4,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-import Logo from "@/components/Logo";
+import Logo from "@/app/icon3.svg";
 import Hamburger from "@/components/Hamburger";
 import NavItem from "@/components/NavItem";
 
@@ -29,9 +29,9 @@ export default function Header() {
     return (
         <header className="pb-3 flex items-center justify-between border-b-2 border-border z-10">
             <Link href="/" aria-label="Home pagina" scroll={false}>
-                <Logo className="h-16 w-auto text-[#D1D5DB]"/>
+                <Logo className="h-16 w-auto"/>
             </Link>
-            <nav className={`origin-top fixed sm:static inset-0 bg-background space-y-4 sm:space-y-0 sm:space-x-4 p-[10%] pt-24 sm:p-0 z-40 ${navEnabled ? "scale-y-100 opacity-100 open" : "scale-y-0 sm:transform-none opacity-0 sm:opacity-100 invisible sm:visible"} ${animate && "transition-all duration-300"}`}>
+            <nav className={`bg-background z-40 fixed sm:static inset-0 space-y-4 sm:space-y-0 sm:space-x-4 p-[10%] pt-24 sm:p-0 origin-top ${animate ? "transition-all duration-300" : ""} ${navEnabled ? "scale-y-100 opacity-100" : "scale-y-0 sm:scale-y-100 opacity-0 sm:opacity-100 invisible sm:visible"}`} data-open={navEnabled}>
                 {Object.entries(tabs).map(([name, url], index) =>
                     <NavItem
                         key={index}

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1016.6 935.2">
     <style>
-        #text { fill: #313131; }
+        #text { fill: #D1D5DB; }
         #gears { fill: #488286; }
 
-        @media (prefers-color-scheme: dark) {
-            #text { fill: #D1D5DB; }
+        @media (prefers-color-scheme: light) {
+            #text { fill: #313131; }
         }
     </style>
     <g id="text">

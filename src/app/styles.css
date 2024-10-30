@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    :root {
+        color-scheme: dark;
+    }
+}
+
 @layer components {
     .accent-hover {
         @apply transition-colors duration-100 text-footerContent hocus:text-accent;
@@ -17,10 +23,6 @@
 
     .text-field {
         @apply px-3 py-2 bg-transparent border border-border transition-colors duration-100 hocus:border-accent rounded-lg outline-none;
-    }
-
-    .text-field::-webkit-calendar-picker-indicator {
-        @apply invert;
     }
 
     .accent-button {

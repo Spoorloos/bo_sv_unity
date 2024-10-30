@@ -1,6 +1,6 @@
 import "@/app/styles.css";
-import { type Metadata } from "next";
 import localFont from "next/font/local";
+import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
     title: "S.V. Unity",
@@ -13,6 +13,10 @@ export const metadata: Metadata = {
         url: "https://sv-unity.spoorloos.xyz",
         description: "De eerste MBO studenten vereniging van Nederland"
     },
+}
+
+export const viewport: Viewport = {
+    colorScheme: "dark",
 }
 
 const kinetika = localFont({

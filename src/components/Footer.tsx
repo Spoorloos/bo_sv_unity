@@ -42,18 +42,34 @@ export default function Footer() {
                 <div className="sm:text-end lg:text-start flex flex-col justify-between gap-6 sm:gap-0">
                     <section>
                         <h2 className="footer-column">Nieuwsbrief</h2>
-                        <form className="inline-flex max-w-72 group" method="POST" action="/nieuwsbrief">
+                        <form className="inline-flex w-full max-w-72 group" method="POST" action="/nieuwsbrief">
                             <input className="w-full p-2 border border-r-0 border-footerContent bg-transparent outline-none rounded-none transition-colors duration-100 group-hocus-within:border-accent" type="email" name="email" placeholder="Jouw e-mailadres" required/>
                             <button className="p-2 bg-footerContent text-background font-kinetika uppercase transition-colors duration-100 group-hocus-within:bg-accent" type="submit" aria-label="Abonneer op nieuwsbrief knop" title="Abonneer op onze nieuwsbrief">Sub</button>
                         </form>
                     </section>
                     <section>
                         <h2 className="footer-column">Socials</h2>
-                        <ul className="h-8 space-x-3 *:inline">
-                            <li><Link className="h-full inline-block accent-hover *:h-full" href="https://instagram.com/" target="_blank" aria-label="Instagram" title="Instagram"><InstagramIcon/></Link></li>
-                            <li><Link className="h-full inline-block accent-hover *:h-full" href="https://youtube.com/" target="_blank" aria-label="Youtube" title="Youtube"><YoutubeIcon/></Link></li>
-                            <li><Link className="h-full inline-block accent-hover *:h-full" href="https://twitter.com/" target="_blank" aria-label="Twitter" title="Twitter"><TwitterIcon/></Link></li>
-                            <li><Link className="h-full inline-block accent-hover *:h-full" href="https://facebook.com/" target="_blank" aria-label="Facebook" title="Facebook"><FacebookIcon/></Link></li>
+                        <ul className="h-8 space-x-3">
+                            <li className="inline">
+                                <Link className="h-full inline-block accent-hover" href="https://instagram.com/" target="_blank" aria-label="Instagram" title="Instagram">
+                                    <InstagramIcon className="h-full"/>
+                                </Link>
+                            </li>
+                            <li className="inline">
+                                <Link className="h-full inline-block accent-hover" href="https://youtube.com/" target="_blank" aria-label="Youtube" title="Youtube">
+                                    <YoutubeIcon className="h-full"/>
+                                </Link>
+                            </li>
+                            <li className="inline">
+                                <Link className="h-full inline-block accent-hover" href="https://twitter.com/" target="_blank" aria-label="Twitter" title="Twitter">
+                                    <TwitterIcon className="h-full"/>
+                                </Link>
+                            </li>
+                            <li className="inline">
+                                <Link className="h-full inline-block accent-hover" href="https://facebook.com/" target="_blank" aria-label="Facebook" title="Facebook">
+                                    <FacebookIcon className="h-full"/>
+                                </Link>
+                            </li>
                         </ul>
                     </section>
                 </div>

@@ -6,6 +6,11 @@
     :root {
         color-scheme: dark;
     }
+
+    ::selection {
+        color: theme("colors.text");
+        background: theme("colors.accent");
+    }
 }
 
 @layer components {

@@ -7,7 +7,7 @@ type InfiniteScroll = Readonly<{
 
 export default function InfiniteScroll({ className, children }: InfiniteScroll) {
     const items = Children.map(children, item =>
-        <li className="h-full inline-block">{item}</li>
+        <li className="contents">{item}</li>
     );
     return (
         <div className={`relative whitespace-nowrap overflow-hidden ${className ?? ""}`}>

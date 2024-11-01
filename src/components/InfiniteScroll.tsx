@@ -1,4 +1,5 @@
 import { Children } from "react";
+import { twMerge } from "tailwind-merge";
 
 type InfiniteScroll = Readonly<{
     className?: string,
@@ -10,7 +11,7 @@ export default function InfiniteScroll({ className, children }: InfiniteScroll) 
         <li className="contents">{item}</li>
     );
     return (
-        <div className={`relative whitespace-nowrap overflow-hidden ${className ?? ""}`}>
+        <div className={twMerge("relative whitespace-nowrap overflow-hidden", className)}>
             <ul className="h-full inline-block relative animate-infinite-scroll">{items}</ul>
             <ul className="h-full inline-block absolute animate-infinite-scroll">{items}</ul>
         </div>

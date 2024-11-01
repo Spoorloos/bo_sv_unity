@@ -1,6 +1,7 @@
 "use client";
 
 import useSWR from "swr";
+import { twMerge } from "tailwind-merge";
 import { useClosest } from "@/lib/hooks";
 import { jsonFetcher } from "@/lib/functions";
 import EventCard, { type Event } from "@/components/EventCard";
@@ -33,7 +34,7 @@ export default function Events() {
             </> : <>
                 <ul className="space-y-12 empty:after:content-['Er_zijn_momenteel_geen_evenementen.']" ref={ref}>
                     {getEvents(data).map((event, index) =>
-                        <li className={`transition-opacity ${closest !== index ? "opacity-40" : ""}`} key={index}><EventCard {...event}/></li>
+                        <li className={twMerge("transition-opacity", closest !== index && "opacity-40")} key={index}><EventCard {...event}/></li>
                     )}
                 </ul>
             </>}

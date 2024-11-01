@@ -1,6 +1,7 @@
 import "@/app/styles.css";
 import localFont from "next/font/local";
 import type { Metadata, Viewport } from "next";
+import { twMerge } from "tailwind-merge";
 
 export const metadata: Metadata = {
     title: "S.V. Unity",
@@ -30,8 +31,8 @@ type RootLayout = Readonly<{
 
 export default function RootLayout({ children }: RootLayout) {
     return (
-        <html className="has-[nav[data-open=true]]:overflow-y-hidden" lang="nl">
-            <body className={`antialiased font-sans bg-background text-text ${kinetika.variable}`}>
+        <html className="has-[nav.open]:overflow-y-hidden" lang="nl">
+            <body className={twMerge("antialiased font-sans bg-background text-text", kinetika.variable)}>
                 {children}
             </body>
         </html>

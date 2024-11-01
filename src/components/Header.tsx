@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { twMerge } from "tailwind-merge";
 import Link from "next/link";
@@ -19,13 +19,7 @@ const tabs = {
 export default function Header() {
     const pathName = usePathname();
     const [navEnabled, setNavEnabled] = useState(false);
-    const [animate, setAnimate] = useState(false);
-
-    const toggleNavBar = (state?: boolean) => {
-        setAnimate(true);
-        setNavEnabled(prev => state ?? !prev);
-        setTimeout(() => setAnimate(false), 300);
-    }
+    const userToggled = useRef(false);
 
     return (
         <header className="pb-3 flex items-center justify-between border-b-2 border-border z-10">
@@ -33,9 +27,8 @@ export default function Header() {
                 <Logo className="h-16 w-auto"/>
             </Link>
             <nav className={twMerge(
-                "bg-background z-40 fixed sm:static inset-0 space-y-4 sm:space-y-0 sm:space-x-4 p-[10%] pt-24 sm:p-0 origin-top",
-                animate && "transition-all duration-300",
-                navEnabled ? "open scale-y-100 opacity-100" : "scale-y-0 sm:scale-y-100 opacity-0 sm:opacity-100 invisible sm:visible"
+                "bg-background z-40 fixed sm:static inset-0 space-y-4 sm:space-y-0 sm:space-x-4 p-[10%] pt-24 sm:p-0 origin-top scale-y-0 sm:scale-y-100 opacity-0 sm:opacity-100",
+                userToggled.current && (navEnabled ? "animate-[open-nav_300ms_both]" : "animate-[close-nav_300ms_both]")
             )}>
                 {Object.entries(tabs).map(([name, url], index) =>
                     <NavItem
@@ -43,10 +36,13 @@ export default function Header() {
                         name={name}
                         href={url}
                         selected={url === "/" ? pathName === "/" : pathName.startsWith(url)}
-                        onClick={() => void (navEnabled && toggleNavBar(false))}/>
+                        onClick={() => void (navEnabled && setNavEnabled(false))}/>
                 )}
             </nav>
-            <Hamburger toggled={navEnabled} onToggle={() => toggleNavBar()}/>
+            <Hamburger toggled={navEnabled} onToggle={() => {
+                userToggled.current = true;
+                setNavEnabled(x => !x);
+            }}/>
         </header>
     );
 }

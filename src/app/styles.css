@@ -11,6 +11,16 @@
         color: theme("colors.text");
         background: theme("colors.accent");
     }
+
+    @keyframes open-nav {
+        from { @apply scale-y-0 opacity-0; }
+        to { @apply scale-y-100 opacity-100; }
+    }
+
+    @keyframes close-nav {
+        from { @apply scale-y-100 opacity-100; }
+        to { @apply scale-y-0 opacity-0; }
+    }
 }
 
 @layer components {

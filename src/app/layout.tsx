@@ -31,8 +31,8 @@ type RootLayout = Readonly<{
 
 export default function RootLayout({ children }: RootLayout) {
     return (
-        <html className="has-[nav.open]:overflow-y-hidden" lang="nl">
-            <body className={twMerge("antialiased font-sans bg-background text-text", kinetika.variable)}>
+        <html lang="nl">
+            <body className={twMerge("antialiased font-sans bg-background text-text has-[nav.open]:fixed inset-0", kinetika.variable)}>
                 {children}
             </body>
         </html>

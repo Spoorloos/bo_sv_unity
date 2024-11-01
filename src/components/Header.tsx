@@ -36,7 +36,7 @@ export default function Header() {
                         name={name}
                         href={url}
                         selected={url === "/" ? pathName === "/" : pathName.startsWith(url)}
-                        onClick={() => void (navEnabled && setNavEnabled(false))}/>
+                        onClick={navEnabled ? () => setNavEnabled(false) : undefined}/>
                 )}
             </nav>
             <Hamburger toggled={navEnabled} onToggle={() => {

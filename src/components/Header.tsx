@@ -28,7 +28,7 @@ export default function Header() {
             </Link>
             <nav className={twMerge(
                 "bg-background z-40 fixed sm:static inset-0 space-y-4 sm:space-y-0 sm:space-x-4 p-[10%] pt-24 sm:p-0 origin-top scale-y-0 sm:scale-y-100 opacity-0 sm:opacity-100",
-                userToggled.current && (navEnabled ? "animate-[open-nav_300ms_both]" : "animate-[close-nav_300ms_both]")
+                userToggled.current && (navEnabled ? "open animate-[open-nav_300ms_both]" : "animate-[close-nav_300ms_both]")
             )}>
                 {Object.entries(tabs).map(([name, url], index) =>
                     <NavItem

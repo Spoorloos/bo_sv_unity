@@ -1,8 +1,5 @@
 import Link from "next/link";
-import YoutubeIcon from "@/public/youtube.svg";
-import FacebookIcon from "@/public/facebook.svg";
-import InstagramIcon from "@/public/instagram.svg";
-import TwitterIcon from "@/public/twitter.svg";
+import { FC, SVGProps } from "react";
 
 const links = {
     "Column 1": {
@@ -25,56 +22,83 @@ const links = {
     },
 } satisfies Record<string, Record<string, string>>;
 
+const socials = {
+    "Instagram": {
+        link: "https://instagram.com",
+        icon: (await import("@/public/instagram.svg")).default,
+    },
+    "Youtube": {
+        link: "https://youtube.com",
+        icon: (await import("@/public/youtube.svg")).default,
+    },
+    "Facebook": {
+        link: "https://facebook.com",
+        icon: (await import("@/public/facebook.svg")).default,
+    },
+    "Twitter": {
+        link: "https://twitter.com",
+        icon: (await import("@/public/twitter.svg")).default,
+    }
+} satisfies Record<string, {
+    link: string,
+    icon: FC<SVGProps<SVGElement>>,
+}>;
+
 export default function Footer() {
     return (
         <footer className="px-[10%] pb-3 pt-12">
             <nav className="px-[5%] pb-8 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-                {Object.entries(links).map(([title, items], index) =>
+                {Object.entries(links).map(([ title, items ], index) =>
                     <section key={index} className={index % 2 === 1 ? "sm:text-end lg:text-start" : undefined}>
                         <h2 className="footer-column">{title}</h2>
                         <ul className="space-y-2">
-                            {Object.entries(items).map(([name, url], index) =>
-                                <li key={index}><Link className="accent-hover" href={url}>{name}</Link></li>
+                            {Object.entries(items).map(([ name, url ], index) =>
+                                <li key={index}>
+                                    <Link className="accent-hover" href={url}>{name}</Link>
+                                </li>
                             )}
                         </ul>
                     </section>
                 )}
-                <div className="sm:text-end lg:text-start flex flex-col justify-between gap-6 sm:gap-0">
+                <div className="flex flex-col justify-between gap-6 sm:text-end lg:text-start sm:gap-0">
                     <section>
                         <h2 className="footer-column">Nieuwsbrief</h2>
                         <form className="inline-flex w-full max-w-72 group" method="POST" action="/nieuwsbrief">
-                            <input className="w-full p-2 border border-r-0 border-footerContent bg-transparent outline-none rounded-none transition-colors duration-100 group-hocus-within:border-accent" type="email" name="email" placeholder="Jouw e-mailadres" required/>
-                            <button className="p-2 bg-footerContent text-background font-kinetika uppercase transition-colors duration-100 group-hocus-within:bg-accent" type="submit" aria-label="Abonneer op nieuwsbrief knop" title="Abonneer op onze nieuwsbrief">Sub</button>
+                            <input
+                                className="w-full p-2 transition-colors duration-100 bg-transparent border border-r-0 rounded-none outline-none border-footerContent group-hocus-within:border-accent"
+                                type="email"
+                                name="email"
+                                placeholder="Jouw e-mailadres"
+                                required/>
+                            <button
+                                className="p-2 uppercase transition-colors duration-100 bg-footerContent text-background font-kinetika group-hocus-within:bg-accent"
+                                type="submit"
+                                aria-label="Abonneer op nieuwsbrief knop"
+                                title="Abonneer op onze nieuwsbrief"
+                            >Sub</button>
                         </form>
                     </section>
                     <section>
                         <h2 className="footer-column">Socials</h2>
                         <ul className="h-8 space-x-3">
-                            <li className="inline">
-                                <Link className="h-full inline-block accent-hover" href="https://instagram.com/" target="_blank" aria-label="Instagram" title="Instagram">
-                                    <InstagramIcon className="h-full"/>
-                                </Link>
-                            </li>
-                            <li className="inline">
-                                <Link className="h-full inline-block accent-hover" href="https://youtube.com/" target="_blank" aria-label="Youtube" title="Youtube">
-                                    <YoutubeIcon className="h-full"/>
-                                </Link>
-                            </li>
-                            <li className="inline">
-                                <Link className="h-full inline-block accent-hover" href="https://twitter.com/" target="_blank" aria-label="Twitter" title="Twitter">
-                                    <TwitterIcon className="h-full"/>
-                                </Link>
-                            </li>
-                            <li className="inline">
-                                <Link className="h-full inline-block accent-hover" href="https://facebook.com/" target="_blank" aria-label="Facebook" title="Facebook">
-                                    <FacebookIcon className="h-full"/>
-                                </Link>
-                            </li>
+                            {Object.entries(socials).map(([ name, { link, icon: Icon } ], index) =>
+                                <li className="inline" key={index}>
+                                    <Link
+                                        className="inline-block h-full accent-hover"
+                                        target="_blank"
+                                        href={link}
+                                        aria-label={name}
+                                        title={name}
+                                    >
+                                        <Icon className="h-full"/>
+                                    </Link>
+                                </li>
+                            )}
                         </ul>
                     </section>
                 </div>
             </nav>
-            <p className="pt-3 text-center border-t-2 border-border text-footerContent font-thin">S.V. Unity &copy; 2024</p>
+            <p className="pt-3 font-thin text-center border-t-2 border-border text-footerContent">S.V. Unity &copy; 2024</p>
         </footer>
     );
 }

@@ -18,7 +18,7 @@ export default {
                 footerContent: "hsl(220 10% 65% / <alpha-value>)",
             },
             fontFamily: {
-                kinetika: ["var(--font-kinetika)", "system-ui", "sans-serif"],
+                kinetika: [ "var(--font-kinetika)", "system-ui", "sans-serif" ],
             },
             animation: {
                 "infinite-scroll": "infinite-scroll 20s linear infinite",

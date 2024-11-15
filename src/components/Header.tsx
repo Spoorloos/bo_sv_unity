@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { twMerge } from "tailwind-merge";
 import Link from "next/link";
@@ -18,19 +18,19 @@ const tabs = {
 
 export default function Header() {
     const pathName = usePathname();
-    const [navEnabled, setNavEnabled] = useState(false);
-    const userToggled = useRef(false);
+    const [ navEnabled, setNavEnabled ] = useState(false);
+    const [ userToggled, setUserToggled ] = useState(false);
 
     return (
-        <header className="pb-3 flex items-center justify-between border-b-2 border-border z-10">
+        <header className="z-10 flex items-center justify-between pb-3 border-b-2 border-border">
             <Link href="/" aria-label="Home pagina" scroll={false}>
-                <Logo className="h-16 w-auto"/>
+                <Logo className="w-auto h-16"/>
             </Link>
             <nav className={twMerge(
                 "bg-background z-40 fixed sm:static inset-0 space-y-4 sm:space-y-0 sm:space-x-4 p-[10%] pt-24 sm:p-0 origin-top scale-y-0 sm:scale-y-100 opacity-0 sm:opacity-100",
-                userToggled.current && (navEnabled ? "open animate-[open-nav_300ms_both]" : "animate-[close-nav_300ms_both]")
+                userToggled && (navEnabled ? "open animate-[open-nav_300ms_both]" : "animate-[close-nav_300ms_both]")
             )}>
-                {Object.entries(tabs).map(([name, url], index) =>
+                {Object.entries(tabs).map(([ name, url ], index) =>
                     <NavItem
                         key={index}
                         name={name}
@@ -40,7 +40,7 @@ export default function Header() {
                 )}
             </nav>
             <Hamburger toggled={navEnabled} onToggle={() => {
-                userToggled.current = true;
+                setUserToggled(true);
                 setNavEnabled(x => !x);
             }}/>
         </header>

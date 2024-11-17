@@ -1,11 +1,12 @@
 import Link from "next/link";
+import { MouseEventHandler } from "react";
 import { twMerge } from "tailwind-merge";
 
 type NavItem = Readonly<{
     name: string;
     href: string;
     selected?: boolean;
-    onClick?: () => void;
+    onClick?: MouseEventHandler<HTMLAnchorElement>;
 }>;
 
 export default function NavItem({ name, href, selected, onClick }: NavItem) {

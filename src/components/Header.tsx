@@ -41,7 +41,7 @@ export default function Header() {
             </nav>
             <Hamburger toggled={navEnabled} onToggle={() => {
                 setUserToggled(true);
-                setNavEnabled(x => !x);
+                setNavEnabled((x) => !x);
             }}/>
         </header>
     );

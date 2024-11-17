@@ -12,14 +12,14 @@ export function useClosest() {
             let closestDistance = Infinity;
             const screenCenter = window.outerHeight/2;
 
-            for (let index = 0; index < children.length; index++) {
-                const child = children[index];
+            for (let i = 0, n = children.length; i < n; i++) {
+                const child = children[i];
                 const { y, height } = child.getBoundingClientRect();
                 const distance = Math.abs(y + height/2 - screenCenter);
 
                 if (distance < closestDistance) {
                     closestDistance = distance;
-                    closestIndex = index;
+                    closestIndex = i;
                 }
             }
 

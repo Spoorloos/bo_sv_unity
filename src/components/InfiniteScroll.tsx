@@ -7,13 +7,13 @@ type InfiniteScroll = Readonly<{
 }>;
 
 export default function InfiniteScroll({ className, children }: InfiniteScroll) {
-    const items = Children.map(children, item =>
+    const items = Children.map(children, (item) =>
         <li className="contents">{item}</li>
     );
     return (
         <div className={twMerge("relative whitespace-nowrap overflow-hidden", className)}>
-            <ul className="h-full inline-block relative animate-infinite-scroll">{items}</ul>
-            <ul className="h-full inline-block absolute animate-infinite-scroll">{items}</ul>
+            <ul className="relative inline-block h-full animate-infinite-scroll">{items}</ul>
+            <ul className="absolute inline-block h-full animate-infinite-scroll">{items}</ul>
         </div>
     );
 }
